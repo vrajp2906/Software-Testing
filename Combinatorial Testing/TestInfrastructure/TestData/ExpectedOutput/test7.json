@@ -1,0 +1,17 @@
+[
+    {
+        "name;\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender\"": "24;\"Vancouver\";\"Software Engineer\";\"29062\";\"IT\";\"2024-06-15\";\"vrajp@gmail.com\";\"416-555-1234\";\"Canada\";\"V5E 4P1\";\"7000 21st ave\";\"B.Sc.\";\"2028-03-26\";\"N/A\";\"Single\";\"0\";\"M\""
+    },
+    {
+        "name;\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender\"": ";\"Vancouver\";\"Data Analyst\";\"75450\";\"Analytics\";\"2025-10-01\";\"\";\"604-233-5678\";\"Canada\";\"V5B 3R9\";\"King george\";\"B.Sci.\";\"2028-08-05\";\"Neha Patel\";\"Single\";\"0\";\"F\""
+    },
+    {
+        "name;\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender\"": "5;\"Calgary\";\"Project Manager\";\"\";\"Project Management\";\"2012-03-11\";\"rio@hotmail.com\";\"455-555-9556\";\"Canada\";\"V2P 5G1\";\"Burnaby Lougheed\";\"MBA\";\"2000-09-18\";\"Kriti S\";\"Married\";\"5\";\"F\""
+    },
+    {
+        "name;\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender\"": "28;\"\";\"Mechanical Engineer\";\"85440\";\"Civil\";\"2020-05-20\";\"singh@live.com\";\"114-222-4321\";\"Canada\";\"K2Z 1Y7\";\"Toronto St Downtown\";\"B.Tech.\";\"1993-12-05\";\"Mrs Singh\";\"Single\";\"0\";\"M\""
+    },
+    {
+        "name;\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender\"": "29;\"Ottawa\";\"Dentist\";\"90999\";\"Doctor\";\"2016-08-30\";\"smitp@gmail.com.com\";\"\";\"Canada\";\"V1A 0B1\";\"Marine Drive\";\"BBA\";\"1988-05-10\";\"Unknown\";\"Single\";\"1\";\"F\""
+    }
+]

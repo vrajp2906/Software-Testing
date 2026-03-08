@@ -1,0 +1,726 @@
+Comparison Log:
+==================================================
+
+
+==================================================
+Differences for test13.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,102 +1,7 @@
+ [
+-    {
+-        "name": "Vraj Patel",
+-        "age": "24",
+-        "city": "Vancouver",
+-        "job": "Software Engineer",
+-        "pay": "29062",
+-        "field": "IT",
+-        "date": "2024-06-15",
+-        "email": "vrajp@gmail.com",
+-        "phone": "416-555-1234",
+-        "country": "Canada",
+-        "postal_code": "V5E 4P1",
+-        "address": "7000 21st ave",
+-        "degree": "B.Sc.",
+-        "birth_date": "2028-03-26",
+-        "emergency_contact": "N/A",
+-        "married": "Single",
+-        "children": "0",
+-        "gender": "M"
+-    },
+-    {
+-        "name": "Dhruv Patel",
+-        "age": "",
+-        "city": "Vancouver",
+-        "job": "Data Analyst",
+-        "pay": "75450",
+-        "field": "Analytics",
+-        "date": "2025-10-01",
+-        "email": "",
+-        "phone": "604-233-5678",
+-        "country": "Canada",
+-        "postal_code": "V5B 3R9",
+-        "address": "King george",
+-        "degree": "B.Sci.",
+-        "birth_date": "2028-08-05",
+-        "emergency_contact": "Neha Patel",
+-        "married": "Single",
+-        "children": "0",
+-        "gender": "F"
+-    },
+-    {
+-        "name": "Rio P",
+-        "age": "5",
+-        "city": "Calgary",
+-        "job": "Project Manager",
+-        "pay": "",
+-        "field": "Project Management",
+-        "date": "2012-03-11",
+-        "email": "rio@hotmail.com",
+-        "phone": "455-555-9556",
+-        "country": "Canada",
+-        "postal_code": "V2P 5G1",
+-        "address": "Burnaby Lougheed",
+-        "degree": "MBA",
+-        "birth_date": "2000-09-18",
+-        "emergency_contact": "Kriti S",
+-        "married": "Married",
+-        "children": "5",
+-        "gender": "F"
+-    },
+-    {
+-        "name": "Mr Singh",
+-        "age": "28",
+-        "city": "",
+-        "job": "Mechanical Engineer",
+-        "pay": "85440",
+-        "field": "Civil",
+-        "date": "2020-05-20",
+-        "email": "singh@live.com",
+-        "phone": "114-222-4321",
+-        "country": "Canada",
+-        "postal_code": "K2Z 1Y7",
+-        "address": "Toronto St Downtown",
+-        "degree": "B.Tech.",
+-        "birth_date": "1993-12-05",
+-        "emergency_contact": "Mrs Singh",
+-        "married": "Single",
+-        "children": "0",
+-        "gender": "M"
+-    },
+-    {
+-        "name": "Smit Patel",
+-        "age": "29",
+-        "city": "Ottawa",
+-        "job": "Dentist",
+-        "pay": "90999",
+-        "field": "Doctor",
+-        "date": "2016-08-30",
+-        "email": "smitp@gmail.com.com",
+-        "phone": "",
+-        "country": "Canada",
+-        "postal_code": "V1A 0B1",
+-        "address": "Marine Drive",
+-        "degree": "BBA",
+-        "birth_date": "1988-05-10",
+-        "emergency_contact": "Unknown",
+-        "married": "Single",
+-        "children": "1",
+-        "gender": "F"
+-    }
+-]+{"name":"Vraj Patel","age":"24","city":"Vancouver","job":"Software Engineer","pay":"29062","field":"IT","date":"2024-06-15","email":"vrajp@gmail.com","phone":"416-555-1234","country":"Canada","postal_code":"V5E 4P1","address":"7000 21st ave","degree":"B.Sc.","birth_date":"2028-03-26","emergency_contact":"N/A","married":"Single","children":"0","gender":"M"},
++{"name":"Dhruv Patel","age":"","city":"Vancouver","job":"Data Analyst","pay":"75450","field":"Analytics","date":"2025-10-01","email":"","phone":"604-233-5678","country":"Canada","postal_code":"V5B 3R9","address":"King george","degree":"B.Sci.","birth_date":"2028-08-05","emergency_contact":"Neha Patel","married":"Single","children":"0","gender":"F"},
++{"name":"Rio P","age":"5","city":"Calgary","job":"Project Manager","pay":"","field":"Project Management","date":"2012-03-11","email":"rio@hotmail.com","phone":"455-555-9556","country":"Canada","postal_code":"V2P 5G1","address":"Burnaby Lougheed","degree":"MBA","birth_date":"2000-09-18","emergency_contact":"Kriti S","married":"Married","children":"5","gender":"F"},
++{"name":"Mr Singh","age":"28","city":"","job":"Mechanical Engineer","pay":"85440","field":"Civil","date":"2020-05-20","email":"singh@live.com","phone":"114-222-4321","country":"Canada","postal_code":"K2Z 1Y7","address":"Toronto St Downtown","degree":"B.Tech.","birth_date":"1993-12-05","emergency_contact":"Mrs Singh","married":"Single","children":"0","gender":"M"},
++{"name":"Smit Patel","age":"29","city":"Ottawa","job":"Dentist","pay":"90999","field":"Doctor","date":"2016-08-30","email":"smitp@gmail.com.com","phone":"","country":"Canada","postal_code":"V1A 0B1","address":"Marine Drive","degree":"BBA","birth_date":"1988-05-10","emergency_contact":"Unknown","married":"Single","children":"1","gender":"F"}
++]
+
+==================================================
+Differences for test15.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,18 +1,6 @@
+ [
+-    {
+-        "'Vraj Patel'": "'Dhruv Patel'",
+-        "'24'": "''"
+-    },
+-    {
+-        "'Vraj Patel'": "'Rio P'",
+-        "'24'": "'5'"
+-    },
+-    {
+-        "'Vraj Patel'": "'Mr Singh'",
+-        "'24'": "'28'"
+-    },
+-    {
+-        "'Vraj Patel'": "'Smit Patel'",
+-        "'24'": "'29'"
+-    }
+-]+{"'Vraj Patel'":"'Dhruv Patel'","'24'":"''"},
++{"'Vraj Patel'":"'Rio P'","'24'":"'5'"},
++{"'Vraj Patel'":"'Mr Singh'","'24'":"'28'"},
++{"'Vraj Patel'":"'Smit Patel'","'24'":"'29'"}
++]
+
+==================================================
+Differences for test8.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,17 +1,7 @@
+ [
+-    {
+-        "'name';'age';'city';'job';'pay';'field';'date';'email';'phone';'country';'postal_code';'address';'degree';'birth_date';'emergency_contact';'married';'children';'gender'": "'Vraj Patel';'24';'Vancouver';'Software Engineer';'29062';'IT';'2024-06-15';'vrajp@gmail.com';'416-555-1234';'Canada';'V5E 4P1';'7000 21st ave';'B.Sc.';'2028-03-26';'N/A';'Single';'0';'M'"
+-    },
+-    {
+-        "'name';'age';'city';'job';'pay';'field';'date';'email';'phone';'country';'postal_code';'address';'degree';'birth_date';'emergency_contact';'married';'children';'gender'": "'Dhruv Patel';'';'Vancouver';'Data Analyst';'75450';'Analytics';'2025-10-01';'';'604-233-5678';'Canada';'V5B 3R9';'King george';'B.Sci.';'2028-08-05';'Neha Patel';'Single';'0';'F'"
+-    },
+-    {
+-        "'name';'age';'city';'job';'pay';'field';'date';'email';'phone';'country';'postal_code';'address';'degree';'birth_date';'emergency_contact';'married';'children';'gender'": "'Rio P';'5';'Calgary';'Project Manager';'';'Project Management';'2012-03-11';'rio@hotmail.com';'455-555-9556';'Canada';'V2P 5G1';'Burnaby Lougheed';'MBA';'2000-09-18';'Kriti S';'Married';'5';'F'"
+-    },
+-    {
+-        "'name';'age';'city';'job';'pay';'field';'date';'email';'phone';'country';'postal_code';'address';'degree';'birth_date';'emergency_contact';'married';'children';'gender'": "'Mr Singh';'28';'';'Mechanical Engineer';'85440';'Civil';'2020-05-20';'singh@live.com';'114-222-4321';'Canada';'K2Z 1Y7';'Toronto St Downtown';'B.Tech.';'1993-12-05';'Mrs Singh';'Single';'0';'M'"
+-    },
+-    {
+-        "'name';'age';'city';'job';'pay';'field';'date';'email';'phone';'country';'postal_code';'address';'degree';'birth_date';'emergency_contact';'married';'children';'gender'": "'Smit Patel';'29';'Ottawa';'Dentist';'90999';'Doctor';'2016-08-30';'smitp@gmail.com.com';'';'Canada';'V1A 0B1';'Marine Drive';'BBA';'1988-05-10';'Unknown';'Single';'1';'F'"
+-    }
+-]+{"'name';'age';'city';'job';'pay';'field';'date';'email';'phone';'country';'postal_code';'address';'degree';'birth_date';'emergency_contact';'married';'children';'gender'":"'Vraj Patel';'24';'Vancouver';'Software Engineer';'29062';'IT';'2024-06-15';'vrajp@gmail.com';'416-555-1234';'Canada';'V5E 4P1';'7000 21st ave';'B.Sc.';'2028-03-26';'N/A';'Single';'0';'M'"},
++{"'name';'age';'city';'job';'pay';'field';'date';'email';'phone';'country';'postal_code';'address';'degree';'birth_date';'emergency_contact';'married';'children';'gender'":"'Dhruv Patel';'';'Vancouver';'Data Analyst';'75450';'Analytics';'2025-10-01';'';'604-233-5678';'Canada';'V5B 3R9';'King george';'B.Sci.';'2028-08-05';'Neha Patel';'Single';'0';'F'"},
++{"'name';'age';'city';'job';'pay';'field';'date';'email';'phone';'country';'postal_code';'address';'degree';'birth_date';'emergency_contact';'married';'children';'gender'":"'Rio P';'5';'Calgary';'Project Manager';'';'Project Management';'2012-03-11';'rio@hotmail.com';'455-555-9556';'Canada';'V2P 5G1';'Burnaby Lougheed';'MBA';'2000-09-18';'Kriti S';'Married';'5';'F'"},
++{"'name';'age';'city';'job';'pay';'field';'date';'email';'phone';'country';'postal_code';'address';'degree';'birth_date';'emergency_contact';'married';'children';'gender'":"'Mr Singh';'28';'';'Mechanical Engineer';'85440';'Civil';'2020-05-20';'singh@live.com';'114-222-4321';'Canada';'K2Z 1Y7';'Toronto St Downtown';'B.Tech.';'1993-12-05';'Mrs Singh';'Single';'0';'M'"},
++{"'name';'age';'city';'job';'pay';'field';'date';'email';'phone';'country';'postal_code';'address';'degree';'birth_date';'emergency_contact';'married';'children';'gender'":"'Smit Patel';'29';'Ottawa';'Dentist';'90999';'Doctor';'2016-08-30';'smitp@gmail.com.com';'';'Canada';'V1A 0B1';'Marine Drive';'BBA';'1988-05-10';'Unknown';'Single';'1';'F'"}
++]
+
+==================================================
+Differences for test9.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,17 +1,7 @@
+ [
+-    {
+-        "name;age": "Vraj Patel;24"
+-    },
+-    {
+-        "name;age": "Dhruv Patel;"
+-    },
+-    {
+-        "name;age": "Rio P;5"
+-    },
+-    {
+-        "name;age": "Mr Singh;28"
+-    },
+-    {
+-        "name;age": "Smit Patel;29"
+-    }
+-]+{"name;age":"Vraj Patel;24"},
++{"name;age":"Dhruv Patel;"},
++{"name;age":"Rio P;5"},
++{"name;age":"Mr Singh;28"},
++{"name;age":"Smit Patel;29"}
++]
+
+==================================================
+Differences for test12.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,14 +1,6 @@
+ [
+-    {
+-        "Vraj Patel|\"24\"": "Dhruv Patel|\"\""
+-    },
+-    {
+-        "Vraj Patel|\"24\"": "Rio P|\"5\""
+-    },
+-    {
+-        "Vraj Patel|\"24\"": "Mr Singh|\"28\""
+-    },
+-    {
+-        "Vraj Patel|\"24\"": "Smit Patel|\"29\""
+-    }
+-]+{"Vraj Patel\"|\"24":"\"Dhruv Patel\"|\"\""},
++{"Vraj Patel\"|\"24":"Rio P\"|\"5"},
++{"Vraj Patel\"|\"24":"Mr Singh\"|\"28"},
++{"Vraj Patel\"|\"24":"Smit Patel\"|\"29"}
++]
+
+==================================================
+Differences for test3.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,102 +1,7 @@
+ [
+-    {
+-        "name": "Vraj Patel",
+-        "age": "24",
+-        "city": "Vancouver",
+-        "job": "Software Engineer",
+-        "pay": "29062",
+-        "field": "IT",
+-        "date": "2024-06-15",
+-        "email": "vrajp@gmail.com",
+-        "phone": "416-555-1234",
+-        "country": "Canada",
+-        "postal_code": "V5E 4P1",
+-        "address": "7000 21st ave",
+-        "degree": "B.Sc.",
+-        "birth_date": "2028-03-26",
+-        "emergency_contact": "N/A",
+-        "married": "Single",
+-        "children": "0",
+-        "gender": "M"
+-    },
+-    {
+-        "name": "Dhruv Patel",
+-        "age": "",
+-        "city": "Vancouver",
+-        "job": "Data Analyst",
+-        "pay": "75450",
+-        "field": "Analytics",
+-        "date": "2025-10-01",
+-        "email": "",
+-        "phone": "604-233-5678",
+-        "country": "Canada",
+-        "postal_code": "V5B 3R9",
+-        "address": "King george",
+-        "degree": "B.Sci.",
+-        "birth_date": "2028-08-05",
+-        "emergency_contact": "Neha Patel",
+-        "married": "Single",
+-        "children": "0",
+-        "gender": "F"
+-    },
+-    {
+-        "name": "Rio P",
+-        "age": "5",
+-        "city": "Calgary",
+-        "job": "Project Manager",
+-        "pay": "",
+-        "field": "Project Management",
+-        "date": "2012-03-11",
+-        "email": "rio@hotmail.com",
+-        "phone": "455-555-9556",
+-        "country": "Canada",
+-        "postal_code": "V2P 5G1",
+-        "address": "Burnaby Lougheed",
+-        "degree": "MBA",
+-        "birth_date": "2000-09-18",
+-        "emergency_contact": "Kriti S",
+-        "married": "Married",
+-        "children": "5",
+-        "gender": "F"
+-    },
+-    {
+-        "name": "Mr Singh",
+-        "age": "28",
+-        "city": "",
+-        "job": "Mechanical Engineer",
+-        "pay": "85440",
+-        "field": "Civil",
+-        "date": "2020-05-20",
+-        "email": "singh@live.com",
+-        "phone": "114-222-4321",
+-        "country": "Canada",
+-        "postal_code": "K2Z 1Y7",
+-        "address": "Toronto St Downtown",
+-        "degree": "B.Tech.",
+-        "birth_date": "1993-12-05",
+-        "emergency_contact": "Mrs Singh",
+-        "married": "Single",
+-        "children": "0",
+-        "gender": "M"
+-    },
+-    {
+-        "name": "Smit Patel",
+-        "age": "29",
+-        "city": "Ottawa",
+-        "job": "Dentist",
+-        "pay": "90999",
+-        "field": "Doctor",
+-        "date": "2016-08-30",
+-        "email": "smitp@gmail.com.com",
+-        "phone": "",
+-        "country": "Canada",
+-        "postal_code": "V1A 0B1",
+-        "address": "Marine Drive",
+-        "degree": "BBA",
+-        "birth_date": "1988-05-10",
+-        "emergency_contact": "Unknown",
+-        "married": "Single",
+-        "children": "1",
+-        "gender": "F"
+-    }
+-]+{"name":"Vraj Patel","age":"24","city":"Vancouver","job":"Software Engineer","pay":"29062","field":"IT","date":"2024-06-15","email":"vrajp@gmail.com","phone":"416-555-1234","country":"Canada","postal_code":"V5E 4P1","address":"7000 21st ave","degree":"B.Sc.","birth_date":"2028-03-26","emergency_contact":"N/A","married":"Single","children":"0","gender":"M"},
++{"name":"Dhruv Patel","age":"","city":"Vancouver","job":"Data Analyst","pay":"75450","field":"Analytics","date":"2025-10-01","email":"","phone":"604-233-5678","country":"Canada","postal_code":"V5B 3R9","address":"King george","degree":"B.Sci.","birth_date":"2028-08-05","emergency_contact":"Neha Patel","married":"Single","children":"0","gender":"F"},
++{"name":"Rio P","age":"5","city":"Calgary","job":"Project Manager","pay":"","field":"Project Management","date":"2012-03-11","email":"rio@hotmail.com","phone":"455-555-9556","country":"Canada","postal_code":"V2P 5G1","address":"Burnaby Lougheed","degree":"MBA","birth_date":"2000-09-18","emergency_contact":"Kriti S","married":"Married","children":"5","gender":"F"},
++{"name":"Mr Singh","age":"28","city":"","job":"Mechanical Engineer","pay":"85440","field":"Civil","date":"2020-05-20","email":"singh@live.com","phone":"114-222-4321","country":"Canada","postal_code":"K2Z 1Y7","address":"Toronto St Downtown","degree":"B.Tech.","birth_date":"1993-12-05","emergency_contact":"Mrs Singh","married":"Single","children":"0","gender":"M"},
++{"name":"Smit Patel","age":"29","city":"Ottawa","job":"Dentist","pay":"90999","field":"Doctor","date":"2016-08-30","email":"smitp@gmail.com.com","phone":"","country":"Canada","postal_code":"V1A 0B1","address":"Marine Drive","degree":"BBA","birth_date":"1988-05-10","emergency_contact":"Unknown","married":"Single","children":"1","gender":"F"}
++]
+
+==================================================
+Differences for test5.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,14 +1,6 @@
+ [
+-    {
+-        "Vraj Patel\t\"24\"": "Dhruv Patel\t\"\""
+-    },
+-    {
+-        "Vraj Patel\t\"24\"": "Rio P\t\"5\""
+-    },
+-    {
+-        "Vraj Patel\t\"24\"": "Mr Singh\t\"28\""
+-    },
+-    {
+-        "Vraj Patel\t\"24\"": "Smit Patel\t\"29\""
+-    }
+-]+{"Vraj Patel\"\t\"24":"\"Dhruv Patel\"\t\"\""},
++{"Vraj Patel\"\t\"24":"Rio P\"\t\"5"},
++{"Vraj Patel\"\t\"24":"Mr Singh\"\t\"28"},
++{"Vraj Patel\"\t\"24":"Smit Patel\"\t\"29"}
++]
+
+==================================================
+Differences for test1.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,18 +1,6 @@
+ [
+-    {
+-        "'Vraj Patel'": "'Dhruv Patel'",
+-        "'24'": "''"
+-    },
+-    {
+-        "'Vraj Patel'": "'Rio P'",
+-        "'24'": "'5'"
+-    },
+-    {
+-        "'Vraj Patel'": "'Mr Singh'",
+-        "'24'": "'28'"
+-    },
+-    {
+-        "'Vraj Patel'": "'Smit Patel'",
+-        "'24'": "'29'"
+-    }
+-]+{"'Vraj Patel'":"'Dhruv Patel'","'24'":"''"},
++{"'Vraj Patel'":"'Rio P'","'24'":"'5'"},
++{"'Vraj Patel'":"'Mr Singh'","'24'":"'28'"},
++{"'Vraj Patel'":"'Smit Patel'","'24'":"'29'"}
++]
+
+==================================================
+Differences for test14.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,102 +1,7 @@
+ [
+-    {
+-        "name": "24",
+-        "age": "Vancouver",
+-        "city": "Software Engineer",
+-        "job": "29062",
+-        "pay": "IT",
+-        "field": "2024-06-15",
+-        "date": "vrajp@gmail.com",
+-        "email": "416-555-1234",
+-        "phone": "Canada",
+-        "country": "V5E 4P1",
+-        "postal_code": "7000 21st ave",
+-        "address": "B.Sc.",
+-        "degree": "2028-03-26",
+-        "birth_date": "N/A",
+-        "emergency_contact": "Single",
+-        "married": "0",
+-        "children": "M",
+-        "gender": null
+-    },
+-    {
+-        "name": "",
+-        "age": "Vancouver",
+-        "city": "Data Analyst",
+-        "job": "75450",
+-        "pay": "Analytics",
+-        "field": "2025-10-01",
+-        "date": "",
+-        "email": "604-233-5678",
+-        "phone": "Canada",
+-        "country": "V5B 3R9",
+-        "postal_code": "King george",
+-        "address": "B.Sci.",
+-        "degree": "2028-08-05",
+-        "birth_date": "Neha Patel",
+-        "emergency_contact": "Single",
+-        "married": "0",
+-        "children": "F",
+-        "gender": null
+-    },
+-    {
+-        "name": "5",
+-        "age": "Calgary",
+-        "city": "Project Manager",
+-        "job": "",
+-        "pay": "Project Management",
+-        "field": "2012-03-11",
+-        "date": "rio@hotmail.com",
+-        "email": "455-555-9556",
+-        "phone": "Canada",
+-        "country": "V2P 5G1",
+-        "postal_code": "Burnaby Lougheed",
+-        "address": "MBA",
+-        "degree": "2000-09-18",
+-        "birth_date": "Kriti S",
+-        "emergency_contact": "Married",
+-        "married": "5",
+-        "children": "F",
+-        "gender": null
+-    },
+-    {
+-        "name": "28",
+-        "age": "",
+-        "city": "Mechanical Engineer",
+-        "job": "85440",
+-        "pay": "Civil",
+-        "field": "2020-05-20",
+-        "date": "singh@live.com",
+-        "email": "114-222-4321",
+-        "phone": "Canada",
+-        "country": "K2Z 1Y7",
+-        "postal_code": "Toronto St Downtown",
+-        "address": "B.Tech.",
+-        "degree": "1993-12-05",
+-        "birth_date": "Mrs Singh",
+-        "emergency_contact": "Single",
+-        "married": "0",
+-        "children": "M",
+-        "gender": null
+-    },
+-    {
+-        "name": "29",
+-        "age": "Ottawa",
+-        "city": "Dentist",
+-        "job": "90999",
+-        "pay": "Doctor",
+-        "field": "2016-08-30",
+-        "date": "smitp@gmail.com.com",
+-        "email": "",
+-        "phone": "Canada",
+-        "country": "V1A 0B1",
+-        "postal_code": "Marine Drive",
+-        "address": "BBA",
+-        "degree": "1988-05-10",
+-        "birth_date": "Unknown",
+-        "emergency_contact": "Single",
+-        "married": "1",
+-        "children": "F",
+-        "gender": null
+-    }
+-]+{"name":"24","age":"Vancouver","city":"Software Engineer","job":"29062","pay":"IT","field":"2024-06-15","date":"vrajp@gmail.com","email":"416-555-1234","phone":"Canada","country":"V5E 4P1","postal_code":"7000 21st ave","address":"B.Sc.","degree":"2028-03-26","birth_date":"N/A","emergency_contact":"Single","married":"0","children":"M"},
++{"name":"","age":"Vancouver","city":"Data Analyst","job":"75450","pay":"Analytics","field":"2025-10-01","date":"","email":"604-233-5678","phone":"Canada","country":"V5B 3R9","postal_code":"King george","address":"B.Sci.","degree":"2028-08-05","birth_date":"Neha Patel","emergency_contact":"Single","married":"0","children":"F"},
++{"name":"5","age":"Calgary","city":"Project Manager","job":"","pay":"Project Management","field":"2012-03-11","date":"rio@hotmail.com","email":"455-555-9556","phone":"Canada","country":"V2P 5G1","postal_code":"Burnaby Lougheed","address":"MBA","degree":"2000-09-18","birth_date":"Kriti S","emergency_contact":"Married","married":"5","children":"F"},
++{"name":"28","age":"","city":"Mechanical Engineer","job":"85440","pay":"Civil","field":"2020-05-20","date":"singh@live.com","email":"114-222-4321","phone":"Canada","country":"K2Z 1Y7","postal_code":"Toronto St Downtown","address":"B.Tech.","degree":"1993-12-05","birth_date":"Mrs Singh","emergency_contact":"Single","married":"0","children":"M"},
++{"name":"29","age":"Ottawa","city":"Dentist","job":"90999","pay":"Doctor","field":"2016-08-30","date":"smitp@gmail.com.com","email":"","phone":"Canada","country":"V1A 0B1","postal_code":"Marine Drive","address":"BBA","degree":"1988-05-10","birth_date":"Unknown","emergency_contact":"Single","married":"1","children":"F"}
++]
+
+==================================================
+Differences for test2.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,22 +1,6 @@
+ [
+-    {
+-        "Vancouver": "Vancouver",
+-        "Canada": "Canada",
+-        "V5E 4P1": "V5B 3R9"
+-    },
+-    {
+-        "Vancouver": "Calgary",
+-        "Canada": "Canada",
+-        "V5E 4P1": "V2P 5G1"
+-    },
+-    {
+-        "Vancouver": "",
+-        "Canada": "Canada",
+-        "V5E 4P1": "K2Z 1Y7"
+-    },
+-    {
+-        "Vancouver": "Ottawa",
+-        "Canada": "Canada",
+-        "V5E 4P1": "V1A 0B1"
+-    }
+-]+{"Vancouver":"Vancouver","Canada":"Canada","V5E 4P1":"V5B 3R9"},
++{"Vancouver":"Calgary","Canada":"Canada","V5E 4P1":"V2P 5G1"},
++{"Vancouver":"","Canada":"Canada","V5E 4P1":"K2Z 1Y7"},
++{"Vancouver":"Ottawa","Canada":"Canada","V5E 4P1":"V1A 0B1"}
++]
+
+==================================================
+Differences for test7.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,17 +1,7 @@
+ [
+-    {
+-        "name;\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender\"": "24;\"Vancouver\";\"Software Engineer\";\"29062\";\"IT\";\"2024-06-15\";\"vrajp@gmail.com\";\"416-555-1234\";\"Canada\";\"V5E 4P1\";\"7000 21st ave\";\"B.Sc.\";\"2028-03-26\";\"N/A\";\"Single\";\"0\";\"M\""
+-    },
+-    {
+-        "name;\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender\"": ";\"Vancouver\";\"Data Analyst\";\"75450\";\"Analytics\";\"2025-10-01\";\"\";\"604-233-5678\";\"Canada\";\"V5B 3R9\";\"King george\";\"B.Sci.\";\"2028-08-05\";\"Neha Patel\";\"Single\";\"0\";\"F\""
+-    },
+-    {
+-        "name;\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender\"": "5;\"Calgary\";\"Project Manager\";\"\";\"Project Management\";\"2012-03-11\";\"rio@hotmail.com\";\"455-555-9556\";\"Canada\";\"V2P 5G1\";\"Burnaby Lougheed\";\"MBA\";\"2000-09-18\";\"Kriti S\";\"Married\";\"5\";\"F\""
+-    },
+-    {
+-        "name;\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender\"": "28;\"\";\"Mechanical Engineer\";\"85440\";\"Civil\";\"2020-05-20\";\"singh@live.com\";\"114-222-4321\";\"Canada\";\"K2Z 1Y7\";\"Toronto St Downtown\";\"B.Tech.\";\"1993-12-05\";\"Mrs Singh\";\"Single\";\"0\";\"M\""
+-    },
+-    {
+-        "name;\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender\"": "29;\"Ottawa\";\"Dentist\";\"90999\";\"Doctor\";\"2016-08-30\";\"smitp@gmail.com.com\";\"\";\"Canada\";\"V1A 0B1\";\"Marine Drive\";\"BBA\";\"1988-05-10\";\"Unknown\";\"Single\";\"1\";\"F\""
+-    }
+-]+{"name\";\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender":"24\";\"Vancouver\";\"Software Engineer\";\"29062\";\"IT\";\"2024-06-15\";\"vrajp@gmail.com\";\"416-555-1234\";\"Canada\";\"V5E 4P1\";\"7000 21st ave\";\"B.Sc.\";\"2028-03-26\";\"N/A\";\"Single\";\"0\";\"M"},
++{"name\";\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender":"\"\";\"Vancouver\";\"Data Analyst\";\"75450\";\"Analytics\";\"2025-10-01\";\"\";\"604-233-5678\";\"Canada\";\"V5B 3R9\";\"King george\";\"B.Sci.\";\"2028-08-05\";\"Neha Patel\";\"Single\";\"0\";\"F\""},
++{"name\";\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender":"5\";\"Calgary\";\"Project Manager\";\";\"Project Management\";\"2012-03-11\";\"rio@hotmail.com\";\"455-555-9556\";\"Canada\";\"V2P 5G1\";\"Burnaby Lougheed\";\"MBA\";\"2000-09-18\";\"Kriti S\";\"Married\";\"5\";\"F"},
++{"name\";\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender":"28\";\";\"Mechanical Engineer\";\"85440\";\"Civil\";\"2020-05-20\";\"singh@live.com\";\"114-222-4321\";\"Canada\";\"K2Z 1Y7\";\"Toronto St Downtown\";\"B.Tech.\";\"1993-12-05\";\"Mrs Singh\";\"Single\";\"0\";\"M"},
++{"name\";\"age\";\"city\";\"job\";\"pay\";\"field\";\"date\";\"email\";\"phone\";\"country\";\"postal_code\";\"address\";\"degree\";\"birth_date\";\"emergency_contact\";\"married\";\"children\";\"gender":"29\";\"Ottawa\";\"Dentist\";\"90999\";\"Doctor\";\"2016-08-30\";\"smitp@gmail.com.com\";\";\"Canada\";\"V1A 0B1\";\"Marine Drive\";\"BBA\";\"1988-05-10\";\"Unknown\";\"Single\";\"1\";\"F"}
++]
+
+==================================================
+Differences for test11.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,17 +1,7 @@
+ [
+-    {
+-        "'name'|'age'|'city'|'job'|'pay'|'field'|'date'|'email'|'phone'|'country'|'postal_code'|'address'|'degree'|'birth_date'|'emergency_contact'|'married'|'children'|'gender'": "'Vraj Patel'|'24'|'Vancouver'|'Software Engineer'|'29062'|'IT'|'2024-06-15'|'vrajp@gmail.com'|'416-555-1234'|'Canada'|'V5E 4P1'|'7000 21st ave'|'B.Sc.'|'2028-03-26'|'N/A'|'Single'|'0'|'M'"
+-    },
+-    {
+-        "'name'|'age'|'city'|'job'|'pay'|'field'|'date'|'email'|'phone'|'country'|'postal_code'|'address'|'degree'|'birth_date'|'emergency_contact'|'married'|'children'|'gender'": "'Dhruv Patel'|''|'Vancouver'|'Data Analyst'|'75450'|'Analytics'|'2025-10-01'|''|'604-233-5678'|'Canada'|'V5B 3R9'|'King george'|'B.Sci.'|'2028-08-05'|'Neha Patel'|'Single'|'0'|'F'"
+-    },
+-    {
+-        "'name'|'age'|'city'|'job'|'pay'|'field'|'date'|'email'|'phone'|'country'|'postal_code'|'address'|'degree'|'birth_date'|'emergency_contact'|'married'|'children'|'gender'": "'Rio P'|'5'|'Calgary'|'Project Manager'|''|'Project Management'|'2012-03-11'|'rio@hotmail.com'|'455-555-9556'|'Canada'|'V2P 5G1'|'Burnaby Lougheed'|'MBA'|'2000-09-18'|'Kriti S'|'Married'|'5'|'F'"
+-    },
+-    {
+-        "'name'|'age'|'city'|'job'|'pay'|'field'|'date'|'email'|'phone'|'country'|'postal_code'|'address'|'degree'|'birth_date'|'emergency_contact'|'married'|'children'|'gender'": "'Mr Singh'|'28'|''|'Mechanical Engineer'|'85440'|'Civil'|'2020-05-20'|'singh@live.com'|'114-222-4321'|'Canada'|'K2Z 1Y7'|'Toronto St Downtown'|'B.Tech.'|'1993-12-05'|'Mrs Singh'|'Single'|'0'|'M'"
+-    },
+-    {
+-        "'name'|'age'|'city'|'job'|'pay'|'field'|'date'|'email'|'phone'|'country'|'postal_code'|'address'|'degree'|'birth_date'|'emergency_contact'|'married'|'children'|'gender'": "'Smit Patel'|'29'|'Ottawa'|'Dentist'|'90999'|'Doctor'|'2016-08-30'|'smitp@gmail.com.com'|''|'Canada'|'V1A 0B1'|'Marine Drive'|'BBA'|'1988-05-10'|'Unknown'|'Single'|'1'|'F'"
+-    }
+-]+{"'name'|'age'|'city'|'job'|'pay'|'field'|'date'|'email'|'phone'|'country'|'postal_code'|'address'|'degree'|'birth_date'|'emergency_contact'|'married'|'children'|'gender'":"'Vraj Patel'|'24'|'Vancouver'|'Software Engineer'|'29062'|'IT'|'2024-06-15'|'vrajp@gmail.com'|'416-555-1234'|'Canada'|'V5E 4P1'|'7000 21st ave'|'B.Sc.'|'2028-03-26'|'N/A'|'Single'|'0'|'M'"},
++{"'name'|'age'|'city'|'job'|'pay'|'field'|'date'|'email'|'phone'|'country'|'postal_code'|'address'|'degree'|'birth_date'|'emergency_contact'|'married'|'children'|'gender'":"'Dhruv Patel'|''|'Vancouver'|'Data Analyst'|'75450'|'Analytics'|'2025-10-01'|''|'604-233-5678'|'Canada'|'V5B 3R9'|'King george'|'B.Sci.'|'2028-08-05'|'Neha Patel'|'Single'|'0'|'F'"},
++{"'name'|'age'|'city'|'job'|'pay'|'field'|'date'|'email'|'phone'|'country'|'postal_code'|'address'|'degree'|'birth_date'|'emergency_contact'|'married'|'children'|'gender'":"'Rio P'|'5'|'Calgary'|'Project Manager'|''|'Project Management'|'2012-03-11'|'rio@hotmail.com'|'455-555-9556'|'Canada'|'V2P 5G1'|'Burnaby Lougheed'|'MBA'|'2000-09-18'|'Kriti S'|'Married'|'5'|'F'"},
++{"'name'|'age'|'city'|'job'|'pay'|'field'|'date'|'email'|'phone'|'country'|'postal_code'|'address'|'degree'|'birth_date'|'emergency_contact'|'married'|'children'|'gender'":"'Mr Singh'|'28'|''|'Mechanical Engineer'|'85440'|'Civil'|'2020-05-20'|'singh@live.com'|'114-222-4321'|'Canada'|'K2Z 1Y7'|'Toronto St Downtown'|'B.Tech.'|'1993-12-05'|'Mrs Singh'|'Single'|'0'|'M'"},
++{"'name'|'age'|'city'|'job'|'pay'|'field'|'date'|'email'|'phone'|'country'|'postal_code'|'address'|'degree'|'birth_date'|'emergency_contact'|'married'|'children'|'gender'":"'Smit Patel'|'29'|'Ottawa'|'Dentist'|'90999'|'Doctor'|'2016-08-30'|'smitp@gmail.com.com'|''|'Canada'|'V1A 0B1'|'Marine Drive'|'BBA'|'1988-05-10'|'Unknown'|'Single'|'1'|'F'"}
++]
+
+==================================================
+Differences for test16.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,17 +1,7 @@
+ [
+-    {
+-        "name\t\"age\"\t\"city\"\t\"job\"\t\"pay\"\t\"field\"\t\"date\"\t\"email\"\t\"phone\"\t\"country\"\t\"postal_code\"\t\"address\"\t\"degree\"\t\"birth_date\"\t\"emergency_contact\"\t\"married\"\t\"children\"\t\"gender\"": "Vancouver\t\"V5E 4P1\""
+-    },
+-    {
+-        "name\t\"age\"\t\"city\"\t\"job\"\t\"pay\"\t\"field\"\t\"date\"\t\"email\"\t\"phone\"\t\"country\"\t\"postal_code\"\t\"address\"\t\"degree\"\t\"birth_date\"\t\"emergency_contact\"\t\"married\"\t\"children\"\t\"gender\"": "Vancouver\t\"V5B 3R9\""
+-    },
+-    {
+-        "name\t\"age\"\t\"city\"\t\"job\"\t\"pay\"\t\"field\"\t\"date\"\t\"email\"\t\"phone\"\t\"country\"\t\"postal_code\"\t\"address\"\t\"degree\"\t\"birth_date\"\t\"emergency_contact\"\t\"married\"\t\"children\"\t\"gender\"": "Calgary\t\"V2P 5G1\""
+-    },
+-    {
+-        "name\t\"age\"\t\"city\"\t\"job\"\t\"pay\"\t\"field\"\t\"date\"\t\"email\"\t\"phone\"\t\"country\"\t\"postal_code\"\t\"address\"\t\"degree\"\t\"birth_date\"\t\"emergency_contact\"\t\"married\"\t\"children\"\t\"gender\"": "\t\"K2Z 1Y7\""
+-    },
+-    {
+-        "name\t\"age\"\t\"city\"\t\"job\"\t\"pay\"\t\"field\"\t\"date\"\t\"email\"\t\"phone\"\t\"country\"\t\"postal_code\"\t\"address\"\t\"degree\"\t\"birth_date\"\t\"emergency_contact\"\t\"married\"\t\"children\"\t\"gender\"": "Ottawa\t\"V1A 0B1\""
+-    }
+-]+{"name\"\t\"age\"\t\"city\"\t\"job\"\t\"pay\"\t\"field\"\t\"date\"\t\"email\"\t\"phone\"\t\"country\"\t\"postal_code\"\t\"address\"\t\"degree\"\t\"birth_date\"\t\"emergency_contact\"\t\"married\"\t\"children\"\t\"gender":"Vancouver\"\t\"V5E 4P1"},
++{"name\"\t\"age\"\t\"city\"\t\"job\"\t\"pay\"\t\"field\"\t\"date\"\t\"email\"\t\"phone\"\t\"country\"\t\"postal_code\"\t\"address\"\t\"degree\"\t\"birth_date\"\t\"emergency_contact\"\t\"married\"\t\"children\"\t\"gender":"Vancouver\"\t\"V5B 3R9"},
++{"name\"\t\"age\"\t\"city\"\t\"job\"\t\"pay\"\t\"field\"\t\"date\"\t\"email\"\t\"phone\"\t\"country\"\t\"postal_code\"\t\"address\"\t\"degree\"\t\"birth_date\"\t\"emergency_contact\"\t\"married\"\t\"children\"\t\"gender":"Calgary\"\t\"V2P 5G1"},
++{"name\"\t\"age\"\t\"city\"\t\"job\"\t\"pay\"\t\"field\"\t\"date\"\t\"email\"\t\"phone\"\t\"country\"\t\"postal_code\"\t\"address\"\t\"degree\"\t\"birth_date\"\t\"emergency_contact\"\t\"married\"\t\"children\"\t\"gender":"\"\"\t\"K2Z 1Y7\""},
++{"name\"\t\"age\"\t\"city\"\t\"job\"\t\"pay\"\t\"field\"\t\"date\"\t\"email\"\t\"phone\"\t\"country\"\t\"postal_code\"\t\"address\"\t\"degree\"\t\"birth_date\"\t\"emergency_contact\"\t\"married\"\t\"children\"\t\"gender":"Ottawa\"\t\"V1A 0B1"}
++]
+
+==================================================
+Differences for test10.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,14 +1,6 @@
+ [
+-    {
+-        "24": ""
+-    },
+-    {
+-        "24": "5"
+-    },
+-    {
+-        "24": "28"
+-    },
+-    {
+-        "24": "29"
+-    }
+-]+{"24":""},
++{"24":"5"},
++{"24":"28"},
++{"24":"29"}
++]
+
+==================================================
+Differences for test4.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,14 +1,6 @@
+ [
+-    {
+-        "24\tVancouver\tSoftware Engineer\t29062\tIT\t2024-06-15\tvrajp@gmail.com\t416-555-1234\tCanada\tV5E 4P1\t7000 21st ave\tB.Sc.\t2028-03-26\tN/A\tSingle\t0\tM": "\tVancouver\tData Analyst\t75450\tAnalytics\t2025-10-01\t\"\"\t604-233-5678\tCanada\tV5B 3R9\tKing george\tB.Sci.\t2028-08-05\tNeha Patel\tSingle\t0\tF"
+-    },
+-    {
+-        "24\tVancouver\tSoftware Engineer\t29062\tIT\t2024-06-15\tvrajp@gmail.com\t416-555-1234\tCanada\tV5E 4P1\t7000 21st ave\tB.Sc.\t2028-03-26\tN/A\tSingle\t0\tM": "5\tCalgary\tProject Manager\t\"\"\tProject Management\t2012-03-11\trio@hotmail.com\t455-555-9556\tCanada\tV2P 5G1\tBurnaby Lougheed\tMBA\t2000-09-18\tKriti S\tMarried\t5\tF"
+-    },
+-    {
+-        "24\tVancouver\tSoftware Engineer\t29062\tIT\t2024-06-15\tvrajp@gmail.com\t416-555-1234\tCanada\tV5E 4P1\t7000 21st ave\tB.Sc.\t2028-03-26\tN/A\tSingle\t0\tM": "28\t\"\"\tMechanical Engineer\t85440\tCivil\t2020-05-20\tsingh@live.com\t114-222-4321\tCanada\tK2Z 1Y7\tToronto St Downtown\tB.Tech.\t1993-12-05\tMrs Singh\tSingle\t0\tM"
+-    },
+-    {
+-        "24\tVancouver\tSoftware Engineer\t29062\tIT\t2024-06-15\tvrajp@gmail.com\t416-555-1234\tCanada\tV5E 4P1\t7000 21st ave\tB.Sc.\t2028-03-26\tN/A\tSingle\t0\tM": "29\tOttawa\tDentist\t90999\tDoctor\t2016-08-30\tsmitp@gmail.com.com\t\"\"\tCanada\tV1A 0B1\tMarine Drive\tBBA\t1988-05-10\tUnknown\tSingle\t1\tF"
+-    }
+-]+{"24\tVancouver\tSoftware Engineer\t29062\tIT\t2024-06-15\tvrajp@gmail":{"com\t416-555-1234\tCanada\tV5E 4P1\t7000 21st ave\tB":{"Sc":{"\t2028-03-26\tN/A\tSingle\t0\tM":"\"\"\tVancouver\tData Analyst\t75450\tAnalytics\t2025-10-01\t\"\"\t604-233-5678\tCanada\tV5B 3R9\tKing george\tB.Sci.\t2028-08-05\tNeha Patel\tSingle\t0\tF"}}}},
++{"24\tVancouver\tSoftware Engineer\t29062\tIT\t2024-06-15\tvrajp@gmail":{"com\t416-555-1234\tCanada\tV5E 4P1\t7000 21st ave\tB":{"Sc":{"\t2028-03-26\tN/A\tSingle\t0\tM":"5\tCalgary\tProject Manager\t\"\"\tProject Management\t2012-03-11\trio@hotmail.com\t455-555-9556\tCanada\tV2P 5G1\tBurnaby Lougheed\tMBA\t2000-09-18\tKriti S\tMarried\t5\tF"}}}},
++{"24\tVancouver\tSoftware Engineer\t29062\tIT\t2024-06-15\tvrajp@gmail":{"com\t416-555-1234\tCanada\tV5E 4P1\t7000 21st ave\tB":{"Sc":{"\t2028-03-26\tN/A\tSingle\t0\tM":"28\t\"\"\tMechanical Engineer\t85440\tCivil\t2020-05-20\tsingh@live.com\t114-222-4321\tCanada\tK2Z 1Y7\tToronto St Downtown\tB.Tech.\t1993-12-05\tMrs Singh\tSingle\t0\tM"}}}},
++{"24\tVancouver\tSoftware Engineer\t29062\tIT\t2024-06-15\tvrajp@gmail":{"com\t416-555-1234\tCanada\tV5E 4P1\t7000 21st ave\tB":{"Sc":{"\t2028-03-26\tN/A\tSingle\t0\tM":"29\tOttawa\tDentist\t90999\tDoctor\t2016-08-30\tsmitp@gmail.com.com\t\"\"\tCanada\tV1A 0B1\tMarine Drive\tBBA\t1988-05-10\tUnknown\tSingle\t1\tF"}}}}
++]
+
+==================================================
+Differences for test6.json:
+==================================================
+
+--- Expected Output
++++ Actual Output
+@@ -1,17 +1,7 @@
+ [
+-    {
+-        "'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'": "'Vancouver'\t'V5E 4P1'"
+-    },
+-    {
+-        "'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'": "'Vancouver'\t'V5B 3R9'"
+-    },
+-    {
+-        "'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'": "'Calgary'\t'V2P 5G1'"
+-    },
+-    {
+-        "'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'": "''\t'K2Z 1Y7'"
+-    },
+-    {
+-        "'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'": "'Ottawa'\t'V1A 0B1'"
+-    }
+-]+{"'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'":"'Vancouver'\t'V5E 4P1'"},
++{"'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'":"'Vancouver'\t'V5B 3R9'"},
++{"'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'":"'Calgary'\t'V2P 5G1'"},
++{"'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'":"''\t'K2Z 1Y7'"},
++{"'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'":"'Ottawa'\t'V1A 0B1'"}
++]

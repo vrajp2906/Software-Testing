@@ -1,0 +1,17 @@
+[
+    {
+        "'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'": "'Vancouver'\t'V5E 4P1'"
+    },
+    {
+        "'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'": "'Vancouver'\t'V5B 3R9'"
+    },
+    {
+        "'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'": "'Calgary'\t'V2P 5G1'"
+    },
+    {
+        "'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'": "''\t'K2Z 1Y7'"
+    },
+    {
+        "'name'\t'age'\t'city'\t'job'\t'pay'\t'field'\t'date'\t'email'\t'phone'\t'country'\t'postal_code'\t'address'\t'degree'\t'birth_date'\t'emergency_contact'\t'married'\t'children'\t'gender'": "'Ottawa'\t'V1A 0B1'"
+    }
+]
