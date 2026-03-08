@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+
+# Coverage files
+coverage/
+coverage-html/
+*.profraw
+*.profdata
+
+# Mac OS system files
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary corpus or generated fuzzing data
+corpus/
+suggest_dic.dict
+
+# Editor files
+.vscode/
+.idea/
