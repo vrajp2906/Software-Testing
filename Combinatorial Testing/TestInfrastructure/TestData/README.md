@@ -27,4 +27,4 @@ TestData
 
 For more details, look at our report
 
-Assignment by Vraj Patel and Dhruv Patel as part of Exercise 2 CMPT 473 Fall 2024
+Project by Vraj Patel and Dhruv Patel
