@@ -1,84 +1,83 @@
+# Software Testing & Reliability Projects
 
-SOFTWARE TESTING & RELIABILITY PROJECTS
+This repository contains three projects focused on **software testing and reliability techniques**.  
+Each project applies a different testing approach to real software tools or libraries.  
+Detailed results and analysis are included in the reports for each project.
 
-Overview
-This repository contains three projects related to software testing and reliability. 
-Each project focuses on a different testing technique and applies it to real software tools or libraries. 
-Detailed explanations and results are available in the reports included with each project.
+# 1. Combinatorial Testing – csvtojson
 
-1. Combinatorial Testing of csvtojson
+## Description
+This project tests the **csvtojson** parser by modeling its configuration space and generating systematic test cases.
 
-Description
-This project tests the csvtojson parser by exploring its configuration options using structured test generation.
+## What I Did
+- Modeled **18 configuration parameters** of the csvtojson tool.
+- Added **constraints between parameters** to avoid invalid combinations.
+- Used **ACTS (Automated Combinatorial Testing for Software)** to generate **t-way interaction test cases**.
+- Built Python scripts to:
+  - Generate test inputs
+  - Produce expected outputs (oracle)
+  - Run the tool automatically
+  - Compare outputs and detect mismatches.
 
-What was done
-- Modeled 18 configuration parameters of the csvtojson tool.
-- Added constraints between parameters to avoid invalid combinations.
-- Used ACTS (Automated Combinatorial Testing for Software) to generate t‑way interaction test cases.
-- Wrote Python scripts to:
-  - generate test inputs
-  - produce expected outputs
-  - run the tool automatically
-  - compare outputs and detect differences.
+## Purpose
+Demonstrates how **combinatorial testing** can efficiently explore large configuration spaces and detect issues caused by parameter interactions.
 
-Purpose
-Show how combinatorial testing can explore many parameter combinations efficiently and help detect issues caused by certain parameter interactions.
 
-2. Mutation Testing of Jsoup and Polly
+# 2. Mutation Testing – Jsoup & Polly
 
-Description
-This project evaluates how effective existing test suites are by using mutation testing. 
-Mutation testing introduces small changes (mutations) in the code to see whether the test suite detects them.
+## Description
+This project evaluates how effective existing test suites are using **mutation testing**.  
+Mutation testing introduces small changes (mutants) into the source code to see whether the test suite detects them.
 
-Libraries tested
-- Jsoup (Java HTML parsing library)
-- Polly (.NET resilience and fault-handling library)
+## Libraries Tested
+- **Jsoup** – Java HTML parsing library  
+- **Polly** – .NET resilience and fault-handling library
 
-Tools used
-- PIT (PITest) for Java mutation testing
-- Stryker.NET for mutation testing in .NET
+## Tools Used
+- **PIT (PITest)** for Java mutation testing
+- **Stryker.NET** for mutation testing in .NET
 
-What was analyzed
+## What I Analyzed
 - Line coverage
-- Mutation score
+- Mutation coverage
 - Test strength
-- Mutants that survived testing
+- Surviving mutants
 
-Purpose
-Show that even when code coverage is high, tests may still miss certain logical errors.
+## Purpose
+Shows that **high code coverage does not always mean strong tests**, and mutation testing helps reveal gaps in existing test suites.
 
-3. Coverage-Guided Fuzzing of Parser Libraries
 
-Description
-This project uses fuzz testing to check how parser libraries behave when they receive unexpected or random input.
+# 3. Coverage-Guided Fuzzing – http-parser & json-c
 
-Libraries tested
-- http-parser (HTTP parser written in C)
-- json-c (JSON parser written in C)
+## Description
+This project uses **coverage-guided fuzz testing** to check how parser libraries behave when they receive unexpected or random input.
 
-Tools used
-- LibFuzzer with LLVM instrumentation
-- AFL++ (American Fuzzy Lop Plus Plus)
+## Libraries Tested
+- **http-parser** – C HTTP request/response parser
+- **json-c** – C library for JSON parsing
 
-What was done
-- Built fuzzing harnesses to connect the libraries to the fuzzing tools.
-- Provided seed inputs and dictionaries to guide the fuzzing process.
+## Tools Used
+- **LibFuzzer** with LLVM instrumentation
+- **AFL++ (American Fuzzy Lop Plus Plus)**
+
+## What I Did
+- Built **fuzzing harnesses** to connect the libraries to the fuzzing tools.
+- Provided **seed inputs and dictionaries** to guide fuzzing.
 - Ran long fuzzing sessions to explore different execution paths.
-- Reviewed coverage results after the runs.
+- Analyzed coverage results after fuzzing.
 
-Purpose
-Test how stable these parsers are when handling many different types of inputs.
+## Purpose
+Used fuzz testing to evaluate how stable these parsers are when handling many different input cases.
 
-Summary
-These projects explore three different testing approaches used in software development.
 
-Combinatorial Testing
-Systematically tests different configuration combinations.
+# Summary
 
-Mutation Testing
-Measures how strong a test suite is by introducing small faults.
+These projects explore three different testing approaches:
 
-Fuzz Testing
-Automatically generates many inputs to test how software behaves in unusual situations.
+| Method | Focus |
+|------|------|
+| Combinatorial Testing | Systematically explores configuration combinations |
+| Mutation Testing | Evaluates the strength of test suites |
+| Fuzz Testing | Tests software behavior with random inputs |
 
-Together, these projects demonstrate practical experience with modern software testing techniques and tools.
+Together, these projects demonstrate practical experience with **modern software testing tools and reliability techniques**.
