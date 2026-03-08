@@ -1,0 +1,7 @@
+POST /cp?w=A&q=oy HTTP/1.1
+Host: S
+A-IM: gdiff, vcdiff
+A-IM: feed, vcdiff
+Host: B
+
+ATFWSxrfeOmQZdusOHkdMyXybEtrvDIpGBvhIqRuFvMTwIVwRsAyvqsobXUDmtQsf

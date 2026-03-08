@@ -1,0 +1,80 @@
+UNLOCK sip://0
+ConnEction: keep-alive, 
+
+PUT /
+P:0 
+Connection: keep-alive,g
+
+PUT /
+Connection: keep-alive, U¯
+
+PUT /cp
+DT: 
+Connection: keep-alive, Us
+
+PUT /e
+P::
+Connection:keep-alive,
+
+PUT /
+Connection:keep-alive,	
+
+PUT /g
+DNT: 0
+Connection: keep-alive,es
+
+PUT /rae
+P::
+Connection: keep-alive
+
+PUT /
+Connection:keep-alive,
+
+PUT /
+Connection: keep-alive,'
+
+PUT /gra
+Connection:keep-alive,
+
+PUT /:A==
+D: 
+Connection: keep-alive,		
+
+PUT /1
+Connection: keep-alive
+
+PUT /A
+Connection: keep-alive,¯
+
+PUT /c
+Connection: keep-alive,s
+
+PUT /^Y5
+Connection:keep-alive
+
+PUT /c?
+DN: 0
+Connection: keep-alive
+
+PUT /g
+DNT: 
+Connection: keep-alive, 
+
+PUT /^e
+P:: 
+Connection: keep-alive
+
+PUT /c?
+N: 1
+Connection: keep-alive
+
+PUT /gg
+Connection: keep-alive, Up	
+
+PUT /g
+Connection:keep-alive, 
+
+PUT /
+Connection:keep-alive,z
+
+PUT /gera

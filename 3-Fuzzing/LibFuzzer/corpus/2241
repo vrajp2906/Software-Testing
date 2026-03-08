@@ -1,0 +1,6 @@
+GET /i HTTP/1.1
+Host: o
+Range: en.wikipedia.org
+Accept-Encoding: identity
+
+PAWkezXvLC

@@ -1,0 +1,7 @@
+POST /r.txt?rF=S&lE=o HTTP/1.1
+Host: K
+Expect: 100-continue
+Trailer: header-names
+Upgrade: foo/2
+
+zTbtDzJpmqCvUSjhmvTCblIfsaqopUtvPutYIvoDqHXBEdHkyrhDNYLVUIKayeQlhFrxQ

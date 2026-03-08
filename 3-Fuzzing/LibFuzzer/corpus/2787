@@ -1,0 +1,5 @@
+GET /h?f=U HTTP/1.1
+Host: B
+Connection: close
+
+QWFo

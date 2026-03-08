@@ -1,0 +1,7 @@
+POST /e.pdf HTTP/1.1
+Host: i
+Accept-Charset: iso-8859-5
+Proxy-Authorization: token64
+Trailer: header-names
+
+dSnQ

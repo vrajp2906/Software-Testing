@@ -1,0 +1,7 @@
+GET /bc?z=s HTTP/1.1
+Host: F
+Upgrade: foo/2
+Content-Length: 72
+Expect: 100-continue
+
+RDfcJjEZZqKqcPdDwrGUTgJkgWwzuaXeNrkvzfxmCPKJOJhLlEjkaUKWlalZSNqPmuFTIqTV

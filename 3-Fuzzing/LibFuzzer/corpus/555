@@ -1,0 +1,7 @@
+POST /kc?NA=b&W=t HTTP/1.1
+Host: N
+Connection: keep-alive
+Accept: application/pdf, application/vnd.sun.xml.draw.template
+Connection: close
+
+eEmFyDCoJFOdjArxFjdQogYaKcMqAZgwGFpRETDFuWrKLgUHXLkgqlsNdrdZbjIwCsqPdpXheyVAXTqZyDgUOCCtooZzUxQAxCBHWEPofuUakHtSVrtethywwgLSsDrkzfxcXglq

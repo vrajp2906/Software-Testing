@@ -1,0 +1,7 @@
+POST /bc?RN=Vt&d=jA HTTP/1.1
+Host: T
+Cookie: i=In
+Access-Control-Request-Method: POST
+Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
+
+YrvWnvBEryydSlao

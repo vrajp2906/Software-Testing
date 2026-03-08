@@ -1,0 +1,6 @@
+GET /z?P=A HTTP/1.1
+Host: G
+Cache-Control: Upgrade 
+Connection: close
+
+SPFqYdxC

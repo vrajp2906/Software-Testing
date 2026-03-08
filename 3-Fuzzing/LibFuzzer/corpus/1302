@@ -1,0 +1,7 @@
+POST /j?NZ=QC HTTP/1.1
+Host: u
+Referer: http://127.0.0.1:8080/a?q=124214221214
+TE: deflate
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+
+yRHLMVTQbtAirobOtWNMmVFERzSGHXmgYakoPiUgSbVcpvQbxVoVmHmbExAOFvzcMs

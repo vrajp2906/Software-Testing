@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Comment.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.jsoup.nodes;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.jsoup.parser.ParseSettings;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.jsoup.parser.Parser;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.jspecify.annotations.Nullable;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.IOException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> A comment node.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> @author Jonathan Hedley, jonathan@hedley.net */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class Comment extends LeafNode {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     Create a new comment node.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     @param data The contents of the comment</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public Comment(String data) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        super(data);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override public String nodeName() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_23'/>
+23
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_23'>3</a>
+<span>
+1. nodeName : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. nodeName : mutated return of Object value for org/jsoup/nodes/Comment::nodeName to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+3. nodeName : replaced return value with &#34;&#34; for org/jsoup/nodes/Comment::nodeName &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return &#34;#comment&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     Get the contents of the comment.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     @return comment content</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String getData() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_31'/>
+31
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_31'>4</a>
+<span>
+1. getData : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. getData : removed call to org/jsoup/nodes/Comment::coreValue &rarr; KILLED<br/>
+3. getData : mutated return of Object value for org/jsoup/nodes/Comment::getData to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+4. getData : replaced return value with &#34;&#34; for org/jsoup/nodes/Comment::getData &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return coreValue();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public Comment setData(String data) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_35'/>
+35
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_35'>1</a>
+<span>
+1. setData : removed call to org/jsoup/nodes/Comment::coreValue &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        coreValue(data);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_36'/>
+36
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_36'>3</a>
+<span>
+1. setData : mutated return of Object value for org/jsoup/nodes/Comment::setData to ( if (x != null) null else throw new RuntimeException ) &rarr; SURVIVED<br/>
+2. setData : replaced return value with null for org/jsoup/nodes/Comment::setData &rarr; SURVIVED<br/>
+3. setData : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        return this;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;void outerHtmlHead(Appendable accum, int depth, Document.OutputSettings out) throws IOException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_41'/>
+41
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_41'>20</a>
+<span>
+1. outerHtmlHead : removed call to org/jsoup/nodes/Document$OutputSettings::outline &rarr; SURVIVED<br/>
+2. outerHtmlHead : removed conditional - replaced equality check with false &rarr; SURVIVED<br/>
+3. outerHtmlHead : negated conditional &rarr; KILLED<br/>
+4. outerHtmlHead : negated conditional &rarr; KILLED<br/>
+5. outerHtmlHead : negated conditional &rarr; KILLED<br/>
+6. outerHtmlHead : negated conditional &rarr; KILLED<br/>
+7. outerHtmlHead : negated conditional &rarr; KILLED<br/>
+8. outerHtmlHead : removed call to org/jsoup/nodes/Document$OutputSettings::prettyPrint &rarr; KILLED<br/>
+9. outerHtmlHead : removed call to org/jsoup/nodes/Comment::isEffectivelyFirst &rarr; KILLED<br/>
+10. outerHtmlHead : removed call to org/jsoup/nodes/Element::tag &rarr; KILLED<br/>
+11. outerHtmlHead : removed call to org/jsoup/parser/Tag::formatAsBlock &rarr; KILLED<br/>
+12. outerHtmlHead : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+13. outerHtmlHead : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+14. outerHtmlHead : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+15. outerHtmlHead : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+16. outerHtmlHead : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+17. outerHtmlHead : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+18. outerHtmlHead : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+19. outerHtmlHead : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+20. outerHtmlHead : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (out.prettyPrint() &#38;&#38; ((isEffectivelyFirst() &#38;&#38; parentNode instanceof Element &#38;&#38; ((Element) parentNode).tag().formatAsBlock()) || (out.outline() )))</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_42'/>
+42
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_42'>1</a>
+<span>
+1. outerHtmlHead : removed call to org/jsoup/nodes/Comment::indent &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            indent(accum, depth, out);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        accum</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_44'/>
+44
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_44'>2</a>
+<span>
+1. outerHtmlHead : removed call to java/lang/Appendable::append &rarr; KILLED<br/>
+2. outerHtmlHead : replaced call to java/lang/Appendable::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                .append(&#34;&#60;!--&#34;)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_45'/>
+45
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_45'>3</a>
+<span>
+1. outerHtmlHead : removed call to org/jsoup/nodes/Comment::getData &rarr; KILLED<br/>
+2. outerHtmlHead : removed call to java/lang/Appendable::append &rarr; KILLED<br/>
+3. outerHtmlHead : replaced call to java/lang/Appendable::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                .append(getData())</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_46'/>
+46
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_46'>2</a>
+<span>
+1. outerHtmlHead : removed call to java/lang/Appendable::append &rarr; KILLED<br/>
+2. outerHtmlHead : replaced call to java/lang/Appendable::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                .append(&#34;--&#62;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    void outerHtmlTail(Appendable accum, int depth, Document.OutputSettings out) {}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public Comment clone() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_54'/>
+54
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_54'>4</a>
+<span>
+1. clone : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. clone : removed call to org/jsoup/nodes/LeafNode::clone &rarr; KILLED<br/>
+3. clone : mutated return of Object value for org/jsoup/nodes/Comment::clone to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+4. clone : replaced return value with null for org/jsoup/nodes/Comment::clone &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return (Comment) super.clone();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Check if this comment looks like an XML Declaration.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return true if it looks like, maybe, it&#39;s an XML Declaration.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean isXmlDeclaration() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_62'/>
+62
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_62'>1</a>
+<span>
+1. isXmlDeclaration : removed call to org/jsoup/nodes/Comment::getData &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        String data = getData();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_63'/>
+63
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_63'>4</a>
+<span>
+1. isXmlDeclaration : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. isXmlDeclaration : removed call to org/jsoup/nodes/Comment::isXmlDeclarationData &rarr; KILLED<br/>
+3. isXmlDeclaration : replaced boolean return with false for org/jsoup/nodes/Comment::isXmlDeclaration &rarr; KILLED<br/>
+4. isXmlDeclaration : replaced boolean return with true for org/jsoup/nodes/Comment::isXmlDeclaration &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return isXmlDeclarationData(data);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static boolean isXmlDeclarationData(String data) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_67'/>
+67
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_67'>18</a>
+<span>
+1. isXmlDeclarationData : removed call to java/lang/String::startsWith &rarr; SURVIVED<br/>
+2. isXmlDeclarationData : removed conditional - replaced equality check with true &rarr; SURVIVED<br/>
+3. isXmlDeclarationData : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+4. isXmlDeclarationData : changed conditional boundary &rarr; KILLED<br/>
+5. isXmlDeclarationData : Substituted 1 with 0 &rarr; KILLED<br/>
+6. isXmlDeclarationData : Substituted 1 with 0 &rarr; KILLED<br/>
+7. isXmlDeclarationData : Substituted 0 with 1 &rarr; KILLED<br/>
+8. isXmlDeclarationData : negated conditional &rarr; KILLED<br/>
+9. isXmlDeclarationData : negated conditional &rarr; KILLED<br/>
+10. isXmlDeclarationData : negated conditional &rarr; KILLED<br/>
+11. isXmlDeclarationData : removed call to java/lang/String::length &rarr; KILLED<br/>
+12. isXmlDeclarationData : removed call to java/lang/String::startsWith &rarr; KILLED<br/>
+13. isXmlDeclarationData : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+14. isXmlDeclarationData : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+15. isXmlDeclarationData : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+16. isXmlDeclarationData : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+17. isXmlDeclarationData : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+18. isXmlDeclarationData : replaced boolean return with true for org/jsoup/nodes/Comment::isXmlDeclarationData &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        return (data.length() &#62; 1 &#38;&#38; (data.startsWith(&#34;!&#34;) || data.startsWith(&#34;?&#34;)));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Attempt to cast this comment to an XML Declaration node.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return an XML declaration if it could be parsed as one, null otherwise.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public @Nullable XmlDeclaration asXmlDeclaration() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_75'/>
+75
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_75'>1</a>
+<span>
+1. asXmlDeclaration : removed call to org/jsoup/nodes/Comment::getData &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        String data = getData();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        XmlDeclaration decl = null;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_78'/>
+78
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_78'>6</a>
+<span>
+1. asXmlDeclaration : Substituted 1 with 0 &rarr; KILLED<br/>
+2. asXmlDeclaration : Substituted 1 with 0 &rarr; KILLED<br/>
+3. asXmlDeclaration : Replaced integer subtraction with addition &rarr; KILLED<br/>
+4. asXmlDeclaration : removed call to java/lang/String::length &rarr; KILLED<br/>
+5. asXmlDeclaration : removed call to java/lang/String::substring &rarr; KILLED<br/>
+6. asXmlDeclaration : replaced call to java/lang/String::substring with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        String declContent = data.substring(1, data.length() - 1);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // make sure this bogus comment is not immediately followed by another, treat as comment if so</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_80'/>
+80
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_80'>4</a>
+<span>
+1. asXmlDeclaration : removed call to org/jsoup/nodes/Comment::isXmlDeclarationData &rarr; SURVIVED<br/>
+2. asXmlDeclaration : removed conditional - replaced equality check with false &rarr; SURVIVED<br/>
+3. asXmlDeclaration : negated conditional &rarr; KILLED<br/>
+4. asXmlDeclaration : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (isXmlDeclarationData(declContent))</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_81'/>
+81
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_81'>2</a>
+<span>
+1. asXmlDeclaration : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. asXmlDeclaration : mutated return of Object value for org/jsoup/nodes/Comment::asXmlDeclaration to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return null;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_83'/>
+83
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_83'>8</a>
+<span>
+1. asXmlDeclaration : removed call to java/lang/StringBuilder::&#60;init&#62; &rarr; KILLED<br/>
+2. asXmlDeclaration : removed call to java/lang/StringBuilder::append &rarr; KILLED<br/>
+3. asXmlDeclaration : removed call to java/lang/StringBuilder::append &rarr; KILLED<br/>
+4. asXmlDeclaration : removed call to java/lang/StringBuilder::append &rarr; KILLED<br/>
+5. asXmlDeclaration : removed call to java/lang/StringBuilder::toString &rarr; KILLED<br/>
+6. asXmlDeclaration : replaced call to java/lang/StringBuilder::append with receiver &rarr; KILLED<br/>
+7. asXmlDeclaration : replaced call to java/lang/StringBuilder::append with receiver &rarr; KILLED<br/>
+8. asXmlDeclaration : replaced call to java/lang/StringBuilder::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        String fragment = &#34;&#60;&#34; + declContent + &#34;&#62;&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // use the HTML parser not XML, so we don&#39;t get into a recursive XML Declaration on contrived data</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_85'/>
+85
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_85'>5</a>
+<span>
+1. asXmlDeclaration : removed call to org/jsoup/parser/Parser::htmlParser &rarr; KILLED<br/>
+2. asXmlDeclaration : removed call to org/jsoup/parser/Parser::settings &rarr; KILLED<br/>
+3. asXmlDeclaration : removed call to org/jsoup/nodes/Comment::baseUri &rarr; KILLED<br/>
+4. asXmlDeclaration : removed call to org/jsoup/parser/Parser::parseInput &rarr; KILLED<br/>
+5. asXmlDeclaration : replaced call to org/jsoup/parser/Parser::settings with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        Document doc = Parser.htmlParser().settings(ParseSettings.preserveCase).parseInput(fragment, baseUri());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_86'/>
+86
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_86'>6</a>
+<span>
+1. asXmlDeclaration : changed conditional boundary &rarr; KILLED<br/>
+2. asXmlDeclaration : negated conditional &rarr; KILLED<br/>
+3. asXmlDeclaration : removed call to org/jsoup/nodes/Document::body &rarr; KILLED<br/>
+4. asXmlDeclaration : removed call to org/jsoup/nodes/Element::childrenSize &rarr; KILLED<br/>
+5. asXmlDeclaration : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+6. asXmlDeclaration : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (doc.body().childrenSize() &#62; 0) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_87'/>
+87
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_87'>4</a>
+<span>
+1. asXmlDeclaration : Substituted 0 with 1 &rarr; KILLED<br/>
+2. asXmlDeclaration : removed call to org/jsoup/nodes/Document::body &rarr; KILLED<br/>
+3. asXmlDeclaration : removed call to org/jsoup/nodes/Element::child &rarr; KILLED<br/>
+4. asXmlDeclaration : replaced call to org/jsoup/nodes/Element::child with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            Element el = doc.body().child(0);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_88'/>
+88
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_88'>7</a>
+<span>
+1. asXmlDeclaration : removed call to java/lang/String::startsWith &rarr; SURVIVED<br/>
+2. asXmlDeclaration : replaced call to org/jsoup/parser/ParseSettings::normalizeTag with argument &rarr; SURVIVED<br/>
+3. asXmlDeclaration : removed call to org/jsoup/nodes/XmlDeclaration::&#60;init&#62; &rarr; KILLED<br/>
+4. asXmlDeclaration : removed call to org/jsoup/nodes/NodeUtils::parser &rarr; KILLED<br/>
+5. asXmlDeclaration : removed call to org/jsoup/parser/Parser::settings &rarr; KILLED<br/>
+6. asXmlDeclaration : removed call to org/jsoup/nodes/Element::tagName &rarr; KILLED<br/>
+7. asXmlDeclaration : removed call to org/jsoup/parser/ParseSettings::normalizeTag &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            decl = new XmlDeclaration(NodeUtils.parser(doc).settings().normalizeTag(el.tagName()), data.startsWith(&#34;!&#34;));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_89'/>
+89
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_89'>3</a>
+<span>
+1. asXmlDeclaration : removed call to org/jsoup/nodes/XmlDeclaration::attributes &rarr; KILLED<br/>
+2. asXmlDeclaration : removed call to org/jsoup/nodes/Element::attributes &rarr; KILLED<br/>
+3. asXmlDeclaration : removed call to org/jsoup/nodes/Attributes::addAll &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            decl.attributes().addAll(el.attributes());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_91'/>
+91
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_91'>3</a>
+<span>
+1. asXmlDeclaration : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. asXmlDeclaration : mutated return of Object value for org/jsoup/nodes/Comment::asXmlDeclaration to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+3. asXmlDeclaration : replaced return value with null for org/jsoup/nodes/Comment::asXmlDeclaration &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return decl;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_23'>23</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_23'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nodeName<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:nodeName()]</span></span> mutated return of Object value for org/jsoup/nodes/Comment::nodeName to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>nodeName<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>nodeName<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:nodeName()]</span></span> replaced return value with &#34;&#34; for org/jsoup/nodes/Comment::nodeName &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_31'>31</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_31'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:getData()]</span></span> removed call to org/jsoup/nodes/Comment::coreValue &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:getData()]</span></span> mutated return of Object value for org/jsoup/nodes/Comment::getData to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getData<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:getData()]</span></span> replaced return value with &#34;&#34; for org/jsoup/nodes/Comment::getData &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_35'>35</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_35'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>setData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testClone()]</span></span> removed call to org/jsoup/nodes/Comment::coreValue &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_36'>36</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_36'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>setData<br/><b>Killed by : </b>none</span></span> mutated return of Object value for org/jsoup/nodes/Comment::setData to ( if (x != null) null else throw new RuntimeException ) &rarr; SURVIVED</p> <p class='NON_VIABLE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>setData<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>setData<br/><b>Killed by : </b>none</span></span> replaced return value with null for org/jsoup/nodes/Comment::setData &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_41'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testHtmlNoPretty()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> removed call to org/jsoup/nodes/Document$OutputSettings::prettyPrint &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> removed call to org/jsoup/nodes/Comment::isEffectivelyFirst &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> removed call to org/jsoup/nodes/Element::tag &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> removed call to org/jsoup/parser/Tag::formatAsBlock &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>none</span></span> removed call to org/jsoup/nodes/Document$OutputSettings::outline &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with false &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testHtmlNoPretty()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:tagsMustStartWithAscii()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testToString()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_42'>42</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_42'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()]</span></span> removed call to org/jsoup/nodes/Comment::indent &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_44'>44</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_44'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testHtmlNoPretty()]</span></span> removed call to java/lang/Appendable::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testHtmlNoPretty()]</span></span> replaced call to java/lang/Appendable::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_45'>45</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_45'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testHtmlNoPretty()]</span></span> removed call to org/jsoup/nodes/Comment::getData &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testHtmlNoPretty()]</span></span> removed call to java/lang/Appendable::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testHtmlNoPretty()]</span></span> replaced call to java/lang/Appendable::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_46'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testHtmlNoPretty()]</span></span> removed call to java/lang/Appendable::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testHtmlNoPretty()]</span></span> replaced call to java/lang/Appendable::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_54'>54</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_54'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testClone()]</span></span> removed call to org/jsoup/nodes/LeafNode::clone &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testClone()]</span></span> mutated return of Object value for org/jsoup/nodes/Comment::clone to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testClone()]</span></span> replaced return value with null for org/jsoup/nodes/Comment::clone &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_62'>62</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_62'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/Comment::getData &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_63'>63</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_63'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/Comment::isXmlDeclarationData &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isXmlDeclaration<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> replaced boolean return with false for org/jsoup/nodes/Comment::isXmlDeclaration &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>isXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> replaced boolean return with true for org/jsoup/nodes/Comment::isXmlDeclaration &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_67'>67</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_67'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#23]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#23]</span></span> Substituted 1 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> Substituted 1 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> removed call to java/lang/String::length &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>none</span></span> removed call to java/lang/String::startsWith &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> removed call to java/lang/String::startsWith &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with true &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#23]</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>isXmlDeclarationData<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()]</span></span> replaced boolean return with true for org/jsoup/nodes/Comment::isXmlDeclarationData &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_75'>75</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_75'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/Comment::getData &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_78'>78</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_78'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> Substituted 1 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:caseSensitiveDeclaration()]</span></span> Substituted 1 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to java/lang/String::length &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to java/lang/String::substring &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> replaced call to java/lang/String::substring with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_80'>80</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_80'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>none</span></span> removed call to org/jsoup/nodes/Comment::isXmlDeclarationData &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with false &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_81'>81</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_81'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#37]</span></span> mutated return of Object value for org/jsoup/nodes/Comment::asXmlDeclaration to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_83'>83</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_83'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to java/lang/StringBuilder::&#60;init&#62; &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to java/lang/StringBuilder::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to java/lang/StringBuilder::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to java/lang/StringBuilder::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to java/lang/StringBuilder::toString &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> replaced call to java/lang/StringBuilder::append with receiver &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> replaced call to java/lang/StringBuilder::append with receiver &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> replaced call to java/lang/StringBuilder::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_85'>85</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_85'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/parser/Parser::htmlParser &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/parser/Parser::settings &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/Comment::baseUri &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/parser/Parser::parseInput &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:caseSensitiveDeclaration()]</span></span> replaced call to org/jsoup/parser/Parser::settings with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_86'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:handlesLTinScript()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/Document::body &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/Element::childrenSize &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:handlesLTinScript()]</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_87'>87</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_87'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/Document::body &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/Element::child &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:caseSensitiveDeclaration()]</span></span> replaced call to org/jsoup/nodes/Element::child with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_88'>88</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_88'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/XmlDeclaration::&#60;init&#62; &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/NodeUtils::parser &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/parser/Parser::settings &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/Element::tagName &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/parser/ParseSettings::normalizeTag &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>none</span></span> removed call to java/lang/String::startsWith &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>none</span></span> replaced call to org/jsoup/parser/ParseSettings::normalizeTag with argument &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_89'>89</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_89'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/XmlDeclaration::attributes &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> removed call to org/jsoup/nodes/Element::attributes &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:caseSensitiveDeclaration()]</span></span> removed call to org/jsoup/nodes/Attributes::addAll &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@58bb5e8b_91'>91</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@58bb5e8b_91'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> mutated return of Object value for org/jsoup/nodes/Comment::asXmlDeclaration to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>asXmlDeclaration<br/><b>Killed by : </b>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()]</span></span> replaced return value with null for org/jsoup/nodes/Comment::asXmlDeclaration &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>CONSTRUCTOR_CALLS</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>EXPERIMENTAL_ARGUMENT_PROPAGATION</li>
+<li class='mutator'>EXPERIMENTAL_BIG_DECIMAL</li>
+<li class='mutator'>EXPERIMENTAL_BIG_INTEGER</li>
+<li class='mutator'>EXPERIMENTAL_MEMBER_VARIABLE</li>
+<li class='mutator'>EXPERIMENTAL_NAKED_RECEIVER</li>
+<li class='mutator'>EXPERIMENTAL_REMOVE_SWITCH_MUTATOR_[0-99]</li>
+<li class='mutator'>EXPERIMENTAL_RETURN_VALUES_MUTATOR</li>
+<li class='mutator'>EXPERIMENTAL_SWITCH</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INLINE_CONSTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NON_VOID_METHOD_CALLS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_IF</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_IF</li>
+<li class='mutator'>REMOVE_INCREMENTS</li>
+<li class='mutator'>RETURN_VALS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:discardsSpuriousByteOrderMark()] (16 ms)</li><li>org.jsoup.helper.W3CDomTest.[engine:junit-jupiter]/[class:org.jsoup.helper.W3CDomTest]/[method:simpleConversion()] (15 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesNullInComments()] (8 ms)</li><li>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testClone()] (2 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testCommentEndBangCoverage()] (9 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[test-template:containsData(java.util.Locale)]/[test-template-invocation:#1] (6 ms)</li><li>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testToString()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesXmlDeclAndCommentsBeforeDoctype()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:commentBeforeHtml()] (10 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:handlesDodgyXmlDecl()] (3 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksXml()] (5 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#25] (63 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#23] (27 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:handlesLTinScript()] (3 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testDetectCharsetEncodingDeclaration()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:allDashCommentsAreNotParseErrors()] (8 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:handleLargeComment()] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#9] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesCommentsInTable()] (8 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#7] (13 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCommentAndDocType()] (4 ms)</li><li>org.jsoup.nodes.ElementTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.ElementTest]/[method:after()] (10 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parsesBodyFragment()] (9 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:testParseRss()] (32 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#17] (133 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:supportsXmlCharsetDeclaration()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:imageXmlMimeType()] (33 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#36] (22 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#13] (134 ms)</li><li>org.jsoup.select.XpathTest.[engine:junit-jupiter]/[class:org.jsoup.select.XpathTest]/[method:supportsPrefixes()] (17 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#34] (765 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parsesUnterminatedComments()] (7 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksFromXmlFetch()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parsesComments()] (8 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksPosition()] (3 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#19] (9 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationAttributes()] (3 ms)</li><li>org.jsoup.nodes.ElementTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.ElementTest]/[method:doctypeIsPrettyPrinted()] (9 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:handlesXmlDeclarationAsDeclaration()] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#31] (9 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#10] (206 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[test-template:containsData(java.util.Locale)]/[test-template-invocation:#2] (8 ms)</li><li>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:stableIndentInBlock()] (3 ms)</li><li>org.jsoup.nodes.ElementTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.ElementTest]/[method:testOuterHtml()] (10 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:tagsMustStartWithAscii()] (13 ms)</li><li>org.jsoup.nodes.ElementTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.ElementTest]/[method:prependNodes()] (14 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:caseSensitiveDeclaration()] (3 ms)</li><li>org.jsoup.nodes.LeafNodeTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.LeafNodeTest]/[method:doesNotGetAttributesTooEasily()] (2 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#28] (132 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:canParseVeryLongBogusComment()] (3 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#26] (51 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testInvalidTableContents()] (12 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#22] (13 ms)</li><li>org.jsoup.select.ElementsTest.[engine:junit-jupiter]/[class:org.jsoup.select.ElementsTest]/[method:comments()] (5 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testCommentEndCoverage()] (3 ms)</li><li>org.jsoup.nodes.ElementTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.ElementTest]/[method:appendNodes()] (9 ms)</li><li>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()] (3 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#8] (9 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[method:bookmark()] (8 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#4] (9 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#2] (10 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#18] (10 ms)</li><li>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:nodeName()] (3 ms)</li><li>org.jsoup.nodes.ElementTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.ElementTest]/[method:before()] (15 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#37] (11 ms)</li><li>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:getData()] (2 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#16] (113 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#14] (144 ms)</li><li>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:testHtmlNoPretty()] (3 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12] (12 ms)</li><li>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:isXmlDeclaration()] (17 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationWithoutAttributes()] (10 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesXmlDeclarationAsBogusComment()] (10 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.8.1
+
+</body>
+</html>

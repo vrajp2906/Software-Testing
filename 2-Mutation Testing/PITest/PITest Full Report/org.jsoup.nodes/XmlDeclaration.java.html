@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>XmlDeclaration.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.jsoup.nodes;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.jsoup.SerializationException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.jsoup.internal.StringUtil;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.jsoup.helper.Validate;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.IOException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * An XML Declaration.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class XmlDeclaration extends LeafNode {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    // todo this impl isn&#39;t really right, the data shouldn&#39;t be attributes, just a run of text after the name</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final boolean isProcessingInstruction; // &#60;! if true, &#60;? if false, declaration (and last data char should be ?)</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Create a new XML declaration</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param name of declaration</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param isProcessingInstruction is processing instruction</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public XmlDeclaration(String name, boolean isProcessingInstruction) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        super(name);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_23'/>
+23
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_23'>1</a>
+<span>
+1. &#60;init&#62; : Removed assignment to member variable isProcessingInstruction &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        this.isProcessingInstruction = isProcessingInstruction;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override public String nodeName() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_27'/>
+27
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_27'>3</a>
+<span>
+1. nodeName : mutated return of Object value for org/jsoup/nodes/XmlDeclaration::nodeName to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+2. nodeName : replaced return of object reference value with [see docs for details] &rarr; KILLED<br/>
+3. nodeName : replaced return value with &#34;&#34; for org/jsoup/nodes/XmlDeclaration::nodeName &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return &#34;#declaration&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Get the name of this declaration.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return name of this declaration.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String name() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_35'/>
+35
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_35'>4</a>
+<span>
+1. name : removed call to org/jsoup/nodes/XmlDeclaration::coreValue &rarr; KILLED<br/>
+2. name : mutated return of Object value for org/jsoup/nodes/XmlDeclaration::name to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+3. name : replaced return of object reference value with [see docs for details] &rarr; KILLED<br/>
+4. name : replaced return value with &#34;&#34; for org/jsoup/nodes/XmlDeclaration::name &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return coreValue();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Get the unencoded XML declaration.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return XML declaration</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String getWholeDeclaration() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_43'/>
+43
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_43'>1</a>
+<span>
+1. getWholeDeclaration : removed call to org/jsoup/internal/StringUtil::borrowBuilder &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        StringBuilder sb = StringUtil.borrowBuilder();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        try {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_45'/>
+45
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_45'>2</a>
+<span>
+1. getWholeDeclaration : removed call to org/jsoup/nodes/Document$OutputSettings::&#60;init&#62; &rarr; KILLED<br/>
+2. getWholeDeclaration : removed call to org/jsoup/nodes/XmlDeclaration::getWholeDeclaration &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            getWholeDeclaration(sb, new Document.OutputSettings());</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        } catch (IOException e) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_47'/>
+47
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_47'>1</a>
+<span>
+1. getWholeDeclaration : removed call to org/jsoup/SerializationException::&#60;init&#62; &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            throw new SerializationException(e);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_49'/>
+49
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_49'>6</a>
+<span>
+1. getWholeDeclaration : removed call to org/jsoup/internal/StringUtil::releaseBuilder &rarr; KILLED<br/>
+2. getWholeDeclaration : removed call to java/lang/String::trim &rarr; KILLED<br/>
+3. getWholeDeclaration : mutated return of Object value for org/jsoup/nodes/XmlDeclaration::getWholeDeclaration to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+4. getWholeDeclaration : replaced call to java/lang/String::trim with receiver &rarr; KILLED<br/>
+5. getWholeDeclaration : replaced return of object reference value with [see docs for details] &rarr; KILLED<br/>
+6. getWholeDeclaration : replaced return value with &#34;&#34; for org/jsoup/nodes/XmlDeclaration::getWholeDeclaration &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return StringUtil.releaseBuilder(sb).trim();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private void getWholeDeclaration(Appendable accum, Document.OutputSettings out) throws IOException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_53'/>
+53
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_53'>1</a>
+<span>
+1. getWholeDeclaration : removed call to org/jsoup/nodes/XmlDeclaration::attributes &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        for (Attribute attribute : attributes()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_54'/>
+54
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_54'>1</a>
+<span>
+1. getWholeDeclaration : removed call to org/jsoup/nodes/Attribute::getKey &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            String key = attribute.getKey();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_55'/>
+55
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_55'>1</a>
+<span>
+1. getWholeDeclaration : removed call to org/jsoup/nodes/Attribute::getValue &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            String val = attribute.getValue();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_56'/>
+56
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_56'>5</a>
+<span>
+1. getWholeDeclaration : negated conditional &rarr; KILLED<br/>
+2. getWholeDeclaration : removed call to org/jsoup/nodes/XmlDeclaration::nodeName &rarr; KILLED<br/>
+3. getWholeDeclaration : removed call to java/lang/String::equals &rarr; KILLED<br/>
+4. getWholeDeclaration : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+5. getWholeDeclaration : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (!key.equals(nodeName())) { // skips coreValue (name)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_57'/>
+57
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_57'>3</a>
+<span>
+1. getWholeDeclaration : Substituted 32 with 33 &rarr; KILLED<br/>
+2. getWholeDeclaration : removed call to java/lang/Appendable::append &rarr; KILLED<br/>
+3. getWholeDeclaration : replaced call to java/lang/Appendable::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                accum.append(&#39; &#39;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                // basically like Attribute, but skip empty vals in XML</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_59'/>
+59
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_59'>2</a>
+<span>
+1. getWholeDeclaration : removed call to java/lang/Appendable::append &rarr; KILLED<br/>
+2. getWholeDeclaration : replaced call to java/lang/Appendable::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                accum.append(key);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_60'/>
+60
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_60'>4</a>
+<span>
+1. getWholeDeclaration : negated conditional &rarr; KILLED<br/>
+2. getWholeDeclaration : removed call to java/lang/String::isEmpty &rarr; KILLED<br/>
+3. getWholeDeclaration : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+4. getWholeDeclaration : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (!val.isEmpty()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_61'/>
+61
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_61'>2</a>
+<span>
+1. getWholeDeclaration : removed call to java/lang/Appendable::append &rarr; KILLED<br/>
+2. getWholeDeclaration : replaced call to java/lang/Appendable::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    accum.append(&#34;=\&#34;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_62'/>
+62
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_62'>2</a>
+<span>
+1. getWholeDeclaration : Substituted 2 with 3 &rarr; SURVIVED<br/>
+2. getWholeDeclaration : removed call to org/jsoup/nodes/Entities::escape &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                    Entities.escape(accum, val, out, Entities.ForAttribute);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_63'/>
+63
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_63'>3</a>
+<span>
+1. getWholeDeclaration : Substituted 34 with 35 &rarr; KILLED<br/>
+2. getWholeDeclaration : removed call to java/lang/Appendable::append &rarr; KILLED<br/>
+3. getWholeDeclaration : replaced call to java/lang/Appendable::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    accum.append(&#39;&#34;&#39;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    void outerHtmlHead(Appendable accum, int depth, Document.OutputSettings out) throws IOException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        accum</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_72'/>
+72
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_72'>2</a>
+<span>
+1. outerHtmlHead : removed call to java/lang/Appendable::append &rarr; KILLED<br/>
+2. outerHtmlHead : replaced call to java/lang/Appendable::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            .append(&#34;&#60;&#34;)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_73'/>
+73
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_73'>5</a>
+<span>
+1. outerHtmlHead : removed conditional - replaced equality check with false &rarr; SURVIVED<br/>
+2. outerHtmlHead : negated conditional &rarr; KILLED<br/>
+3. outerHtmlHead : removed call to java/lang/Appendable::append &rarr; KILLED<br/>
+4. outerHtmlHead : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+5. outerHtmlHead : replaced call to java/lang/Appendable::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            .append(isProcessingInstruction ? &#34;!&#34; : &#34;?&#34;)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_74'/>
+74
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_74'>3</a>
+<span>
+1. outerHtmlHead : removed call to org/jsoup/nodes/XmlDeclaration::coreValue &rarr; KILLED<br/>
+2. outerHtmlHead : removed call to java/lang/Appendable::append &rarr; KILLED<br/>
+3. outerHtmlHead : replaced call to java/lang/Appendable::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            .append(coreValue());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_75'/>
+75
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_75'>1</a>
+<span>
+1. outerHtmlHead : removed call to org/jsoup/nodes/XmlDeclaration::getWholeDeclaration &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        getWholeDeclaration(accum, out);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        accum</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_77'/>
+77
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_77'>5</a>
+<span>
+1. outerHtmlHead : removed conditional - replaced equality check with false &rarr; SURVIVED<br/>
+2. outerHtmlHead : negated conditional &rarr; KILLED<br/>
+3. outerHtmlHead : removed call to java/lang/Appendable::append &rarr; KILLED<br/>
+4. outerHtmlHead : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+5. outerHtmlHead : replaced call to java/lang/Appendable::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            .append(isProcessingInstruction ? &#34;!&#34; : &#34;?&#34;)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_78'/>
+78
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_78'>2</a>
+<span>
+1. outerHtmlHead : removed call to java/lang/Appendable::append &rarr; KILLED<br/>
+2. outerHtmlHead : replaced call to java/lang/Appendable::append with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            .append(&#34;&#62;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    void outerHtmlTail(Appendable accum, int depth, Document.OutputSettings out) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String toString() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_87'/>
+87
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_87'>4</a>
+<span>
+1. toString : removed call to org/jsoup/nodes/XmlDeclaration::outerHtml &rarr; NO_COVERAGE<br/>
+2. toString : mutated return of Object value for org/jsoup/nodes/XmlDeclaration::toString to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+3. toString : replaced return of object reference value with [see docs for details] &rarr; NO_COVERAGE<br/>
+4. toString : replaced return value with &#34;&#34; for org/jsoup/nodes/XmlDeclaration::toString &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return outerHtml();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public XmlDeclaration clone() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_92'/>
+92
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_92'>4</a>
+<span>
+1. clone : removed call to org/jsoup/nodes/LeafNode::clone &rarr; NO_COVERAGE<br/>
+2. clone : mutated return of Object value for org/jsoup/nodes/XmlDeclaration::clone to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+3. clone : replaced return of object reference value with [see docs for details] &rarr; NO_COVERAGE<br/>
+4. clone : replaced return value with null for org/jsoup/nodes/XmlDeclaration::clone &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return (XmlDeclaration) super.clone();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@73cc5d12_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_23'>23</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_23'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> Removed assignment to member variable isProcessingInstruction &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_27'>27</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_27'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>nodeName<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> mutated return of Object value for org/jsoup/nodes/XmlDeclaration::nodeName to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>nodeName<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> replaced return of object reference value with [see docs for details] &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>nodeName<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> replaced return value with &#34;&#34; for org/jsoup/nodes/XmlDeclaration::nodeName &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_35'>35</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_35'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>name<br/><b>Killed by : </b>org.jsoup.nodes.DocumentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.DocumentTest]/[method:testMetaCharsetUpdateXmlUtf8()]</span></span> removed call to org/jsoup/nodes/XmlDeclaration::coreValue &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>name<br/><b>Killed by : </b>org.jsoup.nodes.DocumentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.DocumentTest]/[method:testMetaCharsetUpdateXmlUtf8()]</span></span> mutated return of Object value for org/jsoup/nodes/XmlDeclaration::name to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>name<br/><b>Killed by : </b>org.jsoup.nodes.DocumentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.DocumentTest]/[method:testMetaCharsetUpdateXmlUtf8()]</span></span> replaced return of object reference value with [see docs for details] &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>name<br/><b>Killed by : </b>org.jsoup.nodes.DocumentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.DocumentTest]/[method:testMetaCharsetUpdateXmlUtf8()]</span></span> replaced return value with &#34;&#34; for org/jsoup/nodes/XmlDeclaration::name &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_43'>43</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_43'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationAttributes()]</span></span> removed call to org/jsoup/internal/StringUtil::borrowBuilder &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_45'>45</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_45'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationAttributes()]</span></span> removed call to org/jsoup/nodes/Document$OutputSettings::&#60;init&#62; &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationAttributes()]</span></span> removed call to org/jsoup/nodes/XmlDeclaration::getWholeDeclaration &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_47'>47</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_47'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>none</span></span> removed call to org/jsoup/SerializationException::&#60;init&#62; &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_49'>49</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_49'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationAttributes()]</span></span> removed call to org/jsoup/internal/StringUtil::releaseBuilder &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationAttributes()]</span></span> removed call to java/lang/String::trim &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationAttributes()]</span></span> mutated return of Object value for org/jsoup/nodes/XmlDeclaration::getWholeDeclaration to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationAttributes()]</span></span> replaced call to java/lang/String::trim with receiver &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationAttributes()]</span></span> replaced return of object reference value with [see docs for details] &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationAttributes()]</span></span> replaced return value with &#34;&#34; for org/jsoup/nodes/XmlDeclaration::getWholeDeclaration &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_53'>53</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_53'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to org/jsoup/nodes/XmlDeclaration::attributes &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_54'>54</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_54'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to org/jsoup/nodes/Attribute::getKey &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_55'>55</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_55'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to org/jsoup/nodes/Attribute::getValue &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_56'>56</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_56'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to org/jsoup/nodes/XmlDeclaration::nodeName &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to java/lang/String::equals &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_57'>57</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_57'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> Substituted 32 with 33 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to java/lang/Appendable::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> replaced call to java/lang/Appendable::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_59'>59</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_59'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to java/lang/Appendable::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> replaced call to java/lang/Appendable::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_60'>60</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_60'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationWithoutAttributes()]</span></span> removed call to java/lang/String::isEmpty &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationWithoutAttributes()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_61'>61</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_61'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to java/lang/Appendable::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> replaced call to java/lang/Appendable::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_62'>62</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_62'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>none</span></span> Substituted 2 with 3 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to org/jsoup/nodes/Entities::escape &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_63'>63</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_63'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> Substituted 34 with 35 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to java/lang/Appendable::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getWholeDeclaration<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> replaced call to java/lang/Appendable::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_72'>72</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_72'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to java/lang/Appendable::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> replaced call to java/lang/Appendable::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_73'>73</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_73'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to java/lang/Appendable::append &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with false &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> replaced call to java/lang/Appendable::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_74'>74</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_74'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to org/jsoup/nodes/XmlDeclaration::coreValue &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to java/lang/Appendable::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> replaced call to java/lang/Appendable::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_75'>75</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_75'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to org/jsoup/nodes/XmlDeclaration::getWholeDeclaration &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_77'>77</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_77'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to java/lang/Appendable::append &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with false &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> replaced call to java/lang/Appendable::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_78'>78</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_78'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> removed call to java/lang/Appendable::append &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>outerHtmlHead<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()]</span></span> replaced call to java/lang/Appendable::append with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_87'>87</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_87'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> removed call to org/jsoup/nodes/XmlDeclaration::outerHtml &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> mutated return of Object value for org/jsoup/nodes/XmlDeclaration::toString to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> replaced return value with &#34;&#34; for org/jsoup/nodes/XmlDeclaration::toString &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@73cc5d12_92'>92</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@73cc5d12_92'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>none</span></span> removed call to org/jsoup/nodes/LeafNode::clone &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>none</span></span> mutated return of Object value for org/jsoup/nodes/XmlDeclaration::clone to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>none</span></span> replaced return value with null for org/jsoup/nodes/XmlDeclaration::clone &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>CONSTRUCTOR_CALLS</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>EXPERIMENTAL_ARGUMENT_PROPAGATION</li>
+<li class='mutator'>EXPERIMENTAL_BIG_DECIMAL</li>
+<li class='mutator'>EXPERIMENTAL_BIG_INTEGER</li>
+<li class='mutator'>EXPERIMENTAL_MEMBER_VARIABLE</li>
+<li class='mutator'>EXPERIMENTAL_NAKED_RECEIVER</li>
+<li class='mutator'>EXPERIMENTAL_REMOVE_SWITCH_MUTATOR_[0-99]</li>
+<li class='mutator'>EXPERIMENTAL_RETURN_VALUES_MUTATOR</li>
+<li class='mutator'>EXPERIMENTAL_SWITCH</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INLINE_CONSTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NON_VOID_METHOD_CALLS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_IF</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_IF</li>
+<li class='mutator'>REMOVE_INCREMENTS</li>
+<li class='mutator'>RETURN_VALS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationAttributes()] (3 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:discardsSpuriousByteOrderMark()] (16 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:handlesXmlDeclarationAsDeclaration()] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#31] (9 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#10] (206 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:caseSensitiveDeclaration()] (3 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksXml()] (5 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testDetectCharsetEncodingDeclaration()] (5 ms)</li><li>org.jsoup.nodes.CommentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.CommentTest]/[method:asXmlDeclaration()] (3 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[method:bookmark()] (8 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#7] (13 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#2] (10 ms)</li><li>org.jsoup.nodes.DocumentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.DocumentTest]/[method:testMetaCharsetUpdateXmlUtf8()] (3 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#18] (10 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:testParseRss()] (32 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:supportsXmlCharsetDeclaration()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:imageXmlMimeType()] (33 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#36] (22 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#13] (134 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#14] (144 ms)</li><li>org.jsoup.select.XpathTest.[engine:junit-jupiter]/[class:org.jsoup.select.XpathTest]/[method:supportsPrefixes()] (17 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#34] (765 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()] (3 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationWithoutAttributes()] (10 ms)</li><li>org.jsoup.nodes.DocumentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.DocumentTest]/[method:testMetaCharsetUpdateXmlIso8859()] (4 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksFromXmlFetch()] (6 ms)</li><li>org.jsoup.nodes.DocumentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.DocumentTest]/[method:testMetaCharsetUpdateXmlDisabledNoChanges()] (5 ms)</li><li>org.jsoup.nodes.DocumentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.DocumentTest]/[method:testMetaCharsetUpdateXmlNoCharset()] (4 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.8.1
+
+</body>
+</html>

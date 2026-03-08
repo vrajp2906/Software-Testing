@@ -1,0 +1,32 @@
+GET / HTTP/1.1
+
+GET / HTTP/3.1
+
+GET / HTTP/1.1
+
+GET / HTTP/1.1
+
+GET / HTTP/2.1
+
+GET / HTTP/1.1
+
+GET / HTTP/1.1
+
+GET / HTTP/1.1
+
+GET / HTTP/2.1
+
+GET / HTTP/1.1
+
+GET / HTTP/1.1
+
+GET / HTTP/2.1
+
+GET / HTTP/1.1
+
+GET / HTTP/1.1
+
+GET / HTTP/1.1
+
+GET / HTTP/2.1
+

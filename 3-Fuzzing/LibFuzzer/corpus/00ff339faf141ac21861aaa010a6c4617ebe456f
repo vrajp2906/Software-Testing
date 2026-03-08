@@ -1,0 +1,18 @@
+GET /ltp: HTTP/1.1
+
+GET /p: HTTP/2.1
+
+
+GET /t HTTP/1.1
+
+
+GET /lht HTTP/1.1
+
+GET /lht HTTP/2.1
+
+GET /http: HTTP/1.1
+
+GET /lht: HTTP/1.1
+
+
+G1T

@@ -1,0 +1,7 @@
+GET /t?kX=Q HTTP/1.1
+Host: no-cache
+Expect: 100-continue
+Range: bytes=24:29
+From: a@b.com
+
+svjQkitkymgFReuzYIQqvnuyEVSiXDNuyx

@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>ParseErrorList.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.jsoup.parser;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * A container for ParseErrors.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @author Jonathan Hedley</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class ParseErrorList extends ArrayList&#60;ParseError&#62;{</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static final int INITIAL_CAPACITY = 16;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final int initialCapacity;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final int maxSize;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    ParseErrorList(int initialCapacity, int maxSize) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        super(initialCapacity);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.initialCapacity = initialCapacity;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.maxSize = maxSize;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     Create a new ParseErrorList with the same settings, but no errors in the list</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     @param copy initial and max size details to copy</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    ParseErrorList(ParseErrorList copy) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        this(copy.initialCapacity, copy.maxSize);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    boolean canAddError() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_30'/>
+30
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_30'>4</a>
+<span>
+1. canAddError : changed conditional boundary &rarr; KILLED<br/>
+2. canAddError : negated conditional &rarr; KILLED<br/>
+3. canAddError : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+4. canAddError : replaced boolean return with true for org/jsoup/parser/ParseErrorList::canAddError &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return size() &#60; maxSize;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    int getMaxSize() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_34'/>
+34
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_34'>2</a>
+<span>
+1. getMaxSize : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+2. getMaxSize : replaced int return with 0 for org/jsoup/parser/ParseErrorList::getMaxSize &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return maxSize;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static ParseErrorList noTracking() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_38'/>
+38
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_38'>2</a>
+<span>
+1. noTracking : mutated return of Object value for org/jsoup/parser/ParseErrorList::noTracking to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+2. noTracking : replaced return value with null for org/jsoup/parser/ParseErrorList::noTracking &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return new ParseErrorList(0, 0);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static ParseErrorList tracking(int maxSize) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_42'/>
+42
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_42'>2</a>
+<span>
+1. tracking : mutated return of Object value for org/jsoup/parser/ParseErrorList::tracking to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+2. tracking : replaced return value with null for org/jsoup/parser/ParseErrorList::tracking &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return new ParseErrorList(INITIAL_CAPACITY, maxSize);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public Object clone() {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // all class fields are primitive, so native clone is enough.</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_48'/>
+48
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_48'>2</a>
+<span>
+1. clone : mutated return of Object value for org/jsoup/parser/ParseErrorList::clone to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+2. clone : replaced return value with null for org/jsoup/parser/ParseErrorList::clone &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>        return super.clone();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@46b647e0_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@46b647e0_30'>30</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_30'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>canAddError<br/><b>Killed by : </b>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:noErrorsByDefault()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>canAddError<br/><b>Killed by : </b>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testMalformedSelfClosingTag()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>canAddError<br/><b>Killed by : </b>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testMalformedSelfClosingTag()]</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>canAddError<br/><b>Killed by : </b>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:noErrorsByDefault()]</span></span> replaced boolean return with true for org/jsoup/parser/ParseErrorList::canAddError &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@46b647e0_34'>34</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_34'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMaxSize<br/><b>Killed by : </b>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:selfClosingOnNonvoidIsError()]</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getMaxSize<br/><b>Killed by : </b>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:selfClosingOnNonvoidIsError()]</span></span> replaced int return with 0 for org/jsoup/parser/ParseErrorList::getMaxSize &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@46b647e0_38'>38</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_38'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>noTracking<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:closedOnTryWithResources()]</span></span> mutated return of Object value for org/jsoup/parser/ParseErrorList::noTracking to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>noTracking<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:closedOnTryWithResources()]</span></span> replaced return value with null for org/jsoup/parser/ParseErrorList::noTracking &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@46b647e0_42'>42</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_42'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>tracking<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:dropsDuplicateAttributes()]</span></span> mutated return of Object value for org/jsoup/parser/ParseErrorList::tracking to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>tracking<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:dropsDuplicateAttributes()]</span></span> replaced return value with null for org/jsoup/parser/ParseErrorList::tracking &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@46b647e0_48'>48</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@46b647e0_48'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>none</span></span> mutated return of Object value for org/jsoup/parser/ParseErrorList::clone to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clone<br/><b>Killed by : </b>none</span></span> replaced return value with null for org/jsoup/parser/ParseErrorList::clone &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+<li class='mutator'>RETURN_VALS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canLoopOnSelectNext()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:discardsNakedTds()] (10 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:xmlParserEnablesXmlOutputAndEscapes()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testNoSpuriousSpace()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:mathHtmlIntegrationPoint()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testSpanContents()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:selfClosingTextAreaDoesntLeaveDroppings()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testTemplateInsideTable()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:createsFormElements()] (10 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:trackAttributePositionInFirstElement()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:NoErrorOnEofIfBodyOpen()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:commentBeforeHtml()] (11 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:preserveWhitespaceInHead()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:canDetectAutomaticallyAddedElements()] (7 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:handlesDodgyXmlDecl()] (3 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksImplicitPoppedElements()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:mergeHtmlAttributesFromBody()] (8 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:closedOnStreamDrained()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testSupportsPartiallyNonAsciiTags()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesKnownEmptyNoFrames()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:supportsRuby()] (5 ms)</li><li>org.jsoup.parser.HtmlTreeBuilderStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlTreeBuilderStateTest]/[method:nestedAnchorElements02()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesUnclosedTitleAtEof()] (5 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:bufferUpInAttributeVal()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:templateInHead()] (7 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canIterateFragment()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesCommentsInTable()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:indentRegardlessOfCase()] (7 ms)</li><li>org.jsoup.parser.TokenQueueTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokenQueueTest]/[method:testQuotedPattern()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:convertsImageToImg()] (9 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksFromFetch()] (26 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testSelectWithOption()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testH20()] (6 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksFirstTextnode()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:canSelectIntoTemplate()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:noImplicitFormForTextAreas()] (6 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksClosingHtmlTagsInXml()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:templateTableRowFragment()] (8 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:xmlParseDefaultsToHtmlOutputSyntax()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:templateNotInTableRowFragment()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesUnknownNamespaceTags()] (13 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:preservesCaseByDefault()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:canPreserveTagCase()] (9 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:plaintext()] (5 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canParseFileReader()] (16 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:rubyRpRtImplicitClose()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testHandlesDeepSpans()] (8 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:handleSuperLargeTagNames()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handles0CharacterAsText()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesProtocolRelativeUrl()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesControlCodeInAttributeName()] (9 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testMalformedSelfClosingTag()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testNormalisesIsIndex()] (8 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testCommentEndCoverage()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesCdataInScript()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesTextAfterData()] (10 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canRemoveWithIterator()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesUnclosedScriptAtEof()] (13 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handleNullContextInParseFragment()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesUnclosedTitle()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesNullInData()] (8 ms)</li><li>org.jsoup.parser.AttributeParseTest.[engine:junit-jupiter]/[class:org.jsoup.parser.AttributeParseTest]/[method:parsesRoughAttributeString()] (5 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testDoesHandleEOFInTag()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesUnclosedCdataAtEOF()] (16 ms)</li><li>org.jsoup.parser.ParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.ParserTest]/[method:unescapeEntities()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:htmlOutputCorrectsInvalidAttributeNames()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:canPreserveAttributeCase()] (12 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:xmlOutputCorrectsInvalidAttributeNames()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesBaseTags()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:roundTripsCdata()] (4 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canParseFile()] (16 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesManyChildren()] (101 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:cdataNodesAreTextNodes()] (13 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canStreamFragmentXml()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:nestedAnchorAdoption()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:caseSensitiveParseTree()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:selfClosingVoidIsNotAnError()] (6 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:updateKeyMaintainsRangeUc()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesKnownEmptyIframe()] (9 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:trackAttributesPositionsDirectionalDedupes()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:tableRowFragment()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:mathAnnotationSvg()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testSupportsNonAsciiTags()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parseEmojiFromMultipointEncoded()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesSolidusAtAttributeEnd()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesUnclosedDefinitionLists()] (14 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testFragment()] (12 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testDetectCharsetEncodingDeclaration()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:allDashCommentsAreNotParseErrors()] (12 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:doesNotCreateImplicitLists()] (47 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canStream()] (3 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:handleSuperLargeAttributeName()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesUnclosedAnchors()] (11 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesDataOnlyTags()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesCdata()] (11 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:normalisesEmptyDocument()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesMisnestedTagsBP()] (10 ms)</li><li>org.jsoup.parser.HtmlTreeBuilderStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlTreeBuilderStateTest]/[method:nestedAnchorElements01()] (3 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:xmlNamespace()] (3 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:rcData()] (3 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testRcdataLessthanSign()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesUnclosedFormattingElements()] (12 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesImplicitCaptionClose()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesInvalidDoctypes()] (8 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:trackAttributePositionWithCase()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testReinsertionModeForThCelss()] (6 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:cdataPreservesWhiteSpace()] (3 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testPublicAndSystemIdentifiersWithWhitespace()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parsesComments()] (10 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksFromXmlFetch()] (6 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksPosition()] (4 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:dropsDuplicateAttributes()] (2 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationAttributes()] (4 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksAttributesAcrossLines()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:preservesSpaceInScript()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:reconstructFormattingElementsInTable()] (8 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testPopToClose()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testHtmlLowerCase()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:reconstructFormattingElements()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesBaseWithoutHref()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:tableInPInQuirksMode()] (6 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:caseSensitiveDeclaration()] (3 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:handleLargeTitle()] (1 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testPublicIdentifiersWithWhitespace()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:ignoresContentAfterFrameset()] (9 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canStreamXml()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:textareaValue()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:mathSvgStyleTest()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesFrames()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testUsingSingleQuotesInQueries()] (5 ms)</li><li>org.jsoup.parser.TokenQueueTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokenQueueTest]/[method:testNestedQuotes()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesEscapedData()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testHgroup()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testHeaderContents()] (6 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testEndTagOpen()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:createsDocumentStructure()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:nestedTemplateInBody()] (9 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testOpeningAngleBracketInsteadOfAttribute()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesWhatWgExpensesTableExample()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesInvalidStartTags()] (8 ms)</li><li>org.jsoup.parser.AttributeParseTest.[engine:junit-jupiter]/[class:org.jsoup.parser.AttributeParseTest]/[method:dropsSlashFromAttributeName()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:noTableDirectInTable()] (8 ms)</li><li>org.jsoup.parser.ParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.ParserTest]/[method:unescapeEntitiesHandlesLargeInput()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesTextArea()] (11 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:preservedCaseLinksCantNest()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:nestedPFragments()] (8 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksClosingHeadingTags()] (34 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:parserTrackDefaults()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesNullInComments()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:errorOnEofIfOpen()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesEscapedScript()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:pTagsGetIndented()] (10 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:cp1252Entities()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:preservesSpaceInTextArea()] (7 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:cp1252EntitiesProduceError()] (3 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testSimpleXmlParse()] (4 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:attributeValUnquoted()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:normalisedBodyAfterContent()] (10 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesKnownEmptyStyle()] (13 ms)</li><li>org.jsoup.parser.AttributeParseTest.[engine:junit-jupiter]/[class:org.jsoup.parser.AttributeParseTest]/[method:handlesNewLinesAndReturns()] (4 ms)</li><li>org.jsoup.parser.AttributeParseTest.[engine:junit-jupiter]/[class:org.jsoup.parser.AttributeParseTest]/[method:parsesEmptyString()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parsesRoughAttributes()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:mathParseText()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:dropsUnterminatedTag()] (18 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:canSetHtmlOnCreatedTableElements()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testRelaxedTags()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesKnownEmptyTitle()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:wholeTextTreatsBRasNewline()] (8 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:handleLargeComment()] (2 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksExpectedPoppedElements()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:emptyTdTag()] (10 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parsesSimpleDocument()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:templateInferredForm()] (8 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:handleLargeCdata()] (2 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksDocumentXml()] (3 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:rootHasXmlSettings()] (3 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:closedOnIteratorDrained()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testSpaceAfterTag()] (6 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:trackAttributesPositionsDedupes()] (4 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canIterate()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parsesQuiteRoughAttributes()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testUnclosedNoscriptInHead()] (6 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:disablesPrettyPrintingByDefault()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:preservesTabs()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesSpanInTbody()] (22 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testUnconsumeAtBufferBoundary()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[test-template:dropsDuplicateAttributes(java.lang.String, java.lang.String)]/[test-template-invocation:#1] (13 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canReuse()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesNestedImplicitTable()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handleContentAfterBody()] (11 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:noErrorsByDefault()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testAFlowContents()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:largeTextareaContents()] (11 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:mergeHtmlNoAttributesFromBody()] (9 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:nullInTag()] (4 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:handlesXmlDeclarationAsDeclaration()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:templateFragment()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesUnknownTags()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesInputInTable()] (9 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testCharacterReferenceInRcdata()] (2 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:readerClosedAfterParse()] (3 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:handleLargeText()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:tagsMustStartWithAscii()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:normalisesDocument()] (8 ms)</li><li>org.jsoup.parser.AttributeParseTest.[engine:junit-jupiter]/[class:org.jsoup.parser.AttributeParseTest]/[method:canStartWithEq()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testInvalidTableContents()] (7 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:handlesLessInTagThanAsNewTag()] (3 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksDataNodes()] (3 ms)</li><li>org.jsoup.parser.ParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.ParserTest]/[method:testUtf8()] (3 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksAttributes()] (13 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testOpeningAngleBracketInTagName()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parseFragmentOnCreatedDocument()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesWhitespaceInoDocType()] (11 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:rubyScopeError()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:findsCharsetInMalformedMeta()] (10 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesNewlinesAndWhitespaceInTag()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesSolidusInA()] (9 ms)</li><li>org.jsoup.parser.AttributeParseTest.[engine:junit-jupiter]/[class:org.jsoup.parser.AttributeParseTest]/[method:moreAttributeUnescapes()] (4 ms)</li><li>org.jsoup.parser.AttributeParseTest.[engine:junit-jupiter]/[class:org.jsoup.parser.AttributeParseTest]/[method:parsesBooleanAttributes()] (6 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testUnconsumeAfterBufferUp()] (3 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksAfterPSelfClose()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesMultiClosingBody()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:ignoresDupeEndTrTag()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parsesUnterminatedOption()] (8 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:canNormalizeCase()] (2 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:closedOnComplete()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:svgParseTest()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesMisnestedAInDivs()] (10 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canSelectAndCompleteFragment()] (3 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testRCDATAEndTagName()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testStartOptGroup()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[test-template:dropsDuplicateAttributes(java.lang.String, java.lang.String)]/[test-template-invocation:#2] (12 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testHtmlLowerCaseAttributesForm()] (5 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testParseDeclarationWithoutAttributes()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesXmlDeclarationAsBogusComment()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:afterHeadReAdds()] (10 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canStreamFragment()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:trimNormalizeElementNamesInBuilder()] (6 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:xmlFragment()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:htmlClose()] (9 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksFrag()] (4 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testSupplyParserToDataStream()] (3 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testCommentEndBangCoverage()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesQuotesInCommentsInScripts()] (10 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:worksWithXmlParser()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesCdataAcrossBuffer()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesUnknownInlineTags()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesXmlDeclAndCommentsBeforeDoctype()] (10 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canRemoveFromDom()] (4 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksXml()] (4 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testSupplyParserToJsoupClass()] (3 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canSelectWithSibling()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:normalizesDiscordantTags()] (6 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:select()] (3 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:handlesLTinScript()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parsesUnterminatedTextarea()] (8 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canSelectWithHas()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:fallbackToUtfIfCantEncode()] (10 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:selfClosingOnNonvoidIsError()] (6 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:doesNotReadPastParse()] (4 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:appendPreservesCaseByDefault()] (2 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCommentAndDocType()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testHtmlLowerCaseAttributesOfVoidTags()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesTagsInTextarea()] (14 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[test-template:dropsDuplicateAttributes(java.lang.String, java.lang.String)]/[test-template-invocation:#3] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesBlocksInDefinitions()] (7 ms)</li><li>org.jsoup.parser.AttributeParseTest.[engine:junit-jupiter]/[class:org.jsoup.parser.AttributeParseTest]/[method:strictAttributeUnescapes()] (24 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesJavadocFont()] (9 ms)</li><li>org.jsoup.parser.ParserIT.[engine:junit-jupiter]/[class:org.jsoup.parser.ParserIT]/[method:handlesDeepStack()] (335 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parsesBodyFragment()] (8 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksMarkup()] (4 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:closedOnTryWithResources()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:optionalPClosersAreNotErrors()] (10 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testNoImagesInNoScriptInHead()] (5 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksTableMovedText()] (4 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:roundTripsCdata()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:retainsAttributesOfDifferentCaseIfSensitive()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parseBodyIsIndexNoAttributes()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesTbodyTable()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:relaxedBaseEntityMatchAndStrictExtendedMatch()] (12 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesMisnestedTagsBI()] (10 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:parsesUnterminatedComments()] (7 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testCreatesValidProlog()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:readerClosedAfterParse()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesUnclosedRawtextAtEof()] (13 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:canPreserveBothCase()] (10 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesKnownEmptyBlocks()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:tracksLimitedErrorsWhenRequested()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testFarsi()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:xmlnsAttributeError()] (6 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:updateKeyMaintainsRangeLc()] (4 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:normalizesDiscordantTags()] (2 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testSystemIdentifiersWithWhitespace()] (5 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:xmlSyntaxEscapesLtInAttributes()] (2 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:canParseVeryLongBogusComment()] (3 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testUNewlines()] (7 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksDocument()] (2 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:scriptInDataNode()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:preSkipsFirstNewline()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:normalisesHeadlessBody()] (12 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canStopAndCompleteAndReuse()] (4 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:customTagsAreFlyweights()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:doesNotFindShortestMatchingEntity()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:associatedFormControlsWithDisjointForms()] (10 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:characterReaderBuffer()] (20 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testFontFlowContents()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:commentAtEnd()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:caseInsensitiveParseTree()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:tracksErrorsWhenRequested()] (7 ms)</li><li>org.jsoup.parser.TokeniserStateTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserStateTest]/[method:testBeforeTagName()] (2 ms)</li><li>org.jsoup.parser.TokeniserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.TokeniserTest]/[method:canParseCdataEndingAtEdgeOfBuffer()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:createsStructureFromBodySnippet()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:errorsBeforeHtml()] (9 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:dropsUnterminatedAttribute()] (28 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesUnexpectedMarkupInTables()] (12 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handleCDataInText()] (10 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testDoesNotForceSelfClosingKnownTags()] (4 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.8.1
+
+</body>
+</html>

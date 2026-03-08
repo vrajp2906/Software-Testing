@@ -1,0 +1,7 @@
+POST /kn?uP=Rg&Qt=so HTTP/1.1
+Host: q
+Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l
+Accept-Encoding: deflate, identity, compress, gzip
+Access-Control-Request-Method: POST
+
+MrsFMKTcvZwcwEpjbqAiBcQfLCbLCRdUbrMZBnmedjJUujFdrAlKaGGLfTuQMoYmAbeyvbzQNrbIRTSgxfgVyePvFfjdbifunkQDEFtm

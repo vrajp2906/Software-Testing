@@ -1,0 +1,7 @@
+PUT /vs.html?u=fg HTTP/1.1
+Host: S
+Expect: 100-continue
+Content-Length: 98
+Accept-Charset: iso-8859-5
+
+ZTPiGrZnxjNBPAnzmGptiIZsPeWMgTfGpdJGIywEIWSOPDVxFWVksbIDVVMXORurySgjeMqYflmwotyMxIkgijykQmgvKOLvtU

@@ -1,0 +1,6 @@
+GET /qw.txt?OG=I&U=w HTTP/1.1
+Host: U
+TE: "737060cd8c284d8af7ad3082f209582d"
+Referer: http://127.0.0.1:8080/a?q=124214221214
+
+NLbcpzCiZzQIRkUSGzAYUcEvVBkZZDGRgjzaklSUSKSpWCgAjXNCJbpJiNNmP

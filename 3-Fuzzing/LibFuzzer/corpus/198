@@ -1,0 +1,7 @@
+GET /x?E=ge&ri=YY HTTP/1.1
+Host: x
+Content-Encoding: compress
+Content-Length: 96
+Access-Control-Request-Method: GET
+
+BEiylkIOFPvlwOLgCqrgEDqLkzVceDkFGdvXMcciLKhuLLQJXhvroinwgBmnkhGYAQYFqmeSXTyLMyvhVLgkaLsjieCVMSQR

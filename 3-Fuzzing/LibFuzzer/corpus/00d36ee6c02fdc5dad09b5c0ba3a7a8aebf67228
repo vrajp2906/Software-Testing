@@ -1,0 +1,65 @@
+TRACE ft://?# HTTP/1.1
+
+TRACE p://?o# HTTP/1.1
+
+TRACE f://?#U HTTP/1.1
+
+TRACE p://&?# HTTP/4.1
+
+TRACE f://?# HTTP/1.2
+
+TRACE f://?# HTTP/1.1
+
+TRACE p://?#U% HTTP/2.1
+
+TRACE b://?# HTTP/2.1
+
+TRACE p://&?o# HTTP/1.1
+
+TRACE p://&?o#U HTTP/4.1
+
+TRACE f://&&?#U HTTP/1.1
+
+TRACE t://?#L HTTP/1.1
+
+TRACE ft://?# HTTP/2.1
+
+TRACE p://?# HTTP/2.1
+
+TRACE p://&?:/# HTTP/1.1
+
+TRACE p://?# HTTP/1.1
+
+TRACE t://?# HTTP/1.1
+
+TRACE p://&?# HTTP/4.1
+
+TRACE f://?# HTTP/1.2
+
+TRACE ft://?# HTTP/1.1
+
+TRACE p://?#U% HTTP/3.1
+
+TRACE b://?#U HTTP/1.1
+
+TRACE p://?o# HTTP/1.1
+
+TRACE p://?U HTTP/2.1
+
+TRACE t://?&#U HTTP/1.1
+
+TRACE t://?#L HTTP/1.1
+
+TRACE p://?#U HTTP/1.1
+
+TRACE p://?# HTTP/1.1
+
+TRACE p://a?# HTTP/1.1
+
+TRACE /?#U HTTP/2.1
+
+TRACE f://?#U HTTP/1.2
+
+TRACE f://?D#U HTTP/1.1
+
+TRACE f://?#U

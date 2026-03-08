@@ -1,0 +1,4134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>ControllableInputStream.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.jsoup.internal;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.jsoup.Progress;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.jsoup.helper.Validate;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.jspecify.annotations.Nullable;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.BufferedInputStream;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.FilterInputStream;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.IOException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.InputStream;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.net.SocketTimeoutException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.nio.ByteBuffer;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import static org.jsoup.internal.SharedConstants.DefaultBufferSize;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * A jsoup internal class (so don&#39;t use it as there is no contract API) that enables controls on a buffered input stream,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * namely a maximum read size, and the ability to Thread.interrupt() the read.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// reimplemented from ConstrainableInputStream for JDK21 - extending BufferedInputStream will pin threads during read</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class ControllableInputStream extends FilterInputStream {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final SimpleBufferedInput buff; // super.in, but typed as SimpleBufferedInput</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private int maxSize;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private long startTime;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private long timeout = 0; // optional max time of request</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private int remaining;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private int markPos;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private boolean interrupted;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private boolean allowClose = true; // for cases where we want to re-read the input, can ignore .close() from the parser</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    // if we are tracking progress, will have the expected content length, progress callback, connection</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private @Nullable Progress&#60;?&#62; progress;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private @Nullable Object progressContext;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private int contentLength = -1;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private int readPos = 0; // amount read; can be reset()</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private ControllableInputStream(SimpleBufferedInput in, int maxSize) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        super(in);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_39'/>
+39
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_39'>3</a>
+<span>
+1. &#60;init&#62; : removed call to org/jsoup/helper/Validate::isTrue &rarr; SURVIVED<br/>
+2. &#60;init&#62; : changed conditional boundary &rarr; KILLED<br/>
+3. &#60;init&#62; : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        Validate.isTrue(maxSize &#62;= 0);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        buff = in;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.maxSize = maxSize;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        remaining = maxSize;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        markPos = -1;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        startTime = System.nanoTime();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * If this InputStream is not already a ControllableInputStream, let it be one.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param in the input stream to (maybe) wrap</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param maxSize the maximum size to allow to be read. 0 == infinite.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return a controllable input stream</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static ControllableInputStream wrap(InputStream in, int maxSize) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // bufferSize currently unused; consider implementing as a min size in the SoftPool recycler</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_55'/>
+55
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_55'>2</a>
+<span>
+1. wrap : removed conditional - replaced equality check with false &rarr; SURVIVED<br/>
+2. wrap : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (in instanceof ControllableInputStream)</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_56'/>
+56
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_56'>2</a>
+<span>
+1. wrap : mutated return of Object value for org/jsoup/internal/ControllableInputStream::wrap to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+2. wrap : replaced return value with null for org/jsoup/internal/ControllableInputStream::wrap &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>            return (ControllableInputStream) in;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        else</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_58'/>
+58
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_58'>2</a>
+<span>
+1. wrap : mutated return of Object value for org/jsoup/internal/ControllableInputStream::wrap to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+2. wrap : replaced return value with null for org/jsoup/internal/ControllableInputStream::wrap &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return new ControllableInputStream(new SimpleBufferedInput(in), maxSize);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * If this InputStream is not already a ControllableInputStream, let it be one.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param in the input stream to (maybe) wrap</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param bufferSize the buffer size to use when reading</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param maxSize the maximum size to allow to be read. 0 == infinite.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return a controllable input stream</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static ControllableInputStream wrap(InputStream in, int bufferSize, int maxSize) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // todo - bufferSize currently unused; consider implementing as a min size in the SoftPool recycler; or just deprecate if always DefaultBufferSize</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_70'/>
+70
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_70'>2</a>
+<span>
+1. wrap : mutated return of Object value for org/jsoup/internal/ControllableInputStream::wrap to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+2. wrap : replaced return value with null for org/jsoup/internal/ControllableInputStream::wrap &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return wrap(in, maxSize);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int read(byte[] b, int off, int len) throws IOException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_75'/>
+75
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_75'>3</a>
+<span>
+1. read : negated conditional &rarr; KILLED<br/>
+2. read : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+3. read : removed call to org/jsoup/internal/ControllableInputStream::emitProgress &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (readPos == 0) emitProgress(); // emits a progress</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_77'/>
+77
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_77'>2</a>
+<span>
+1. read : negated conditional &rarr; KILLED<br/>
+2. read : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        boolean capped = maxSize != 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_78'/>
+78
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_78'>6</a>
+<span>
+1. read : changed conditional boundary &rarr; KILLED<br/>
+2. read : negated conditional &rarr; KILLED<br/>
+3. read : negated conditional &rarr; KILLED<br/>
+4. read : negated conditional &rarr; KILLED<br/>
+5. read : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+6. read : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (interrupted || capped &#38;&#38; remaining &#60;= 0)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_79'/>
+79
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_79'>2</a>
+<span>
+1. read : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+2. read : replaced int return with 0 for org/jsoup/internal/ControllableInputStream::read &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return -1;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_80'/>
+80
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_80'>2</a>
+<span>
+1. read : negated conditional &rarr; KILLED<br/>
+2. read : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (Thread.currentThread().isInterrupted()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            // interrupted latches, because parse() may call twice</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            interrupted = true;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_83'/>
+83
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_83'>2</a>
+<span>
+1. read : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+2. read : replaced int return with 0 for org/jsoup/internal/ControllableInputStream::read &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return -1;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_86'/>
+86
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_86'>4</a>
+<span>
+1. read : changed conditional boundary &rarr; SURVIVED<br/>
+2. read : negated conditional &rarr; KILLED<br/>
+3. read : negated conditional &rarr; KILLED<br/>
+4. read : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (capped &#38;&#38; len &#62; remaining)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            len = remaining; // don&#39;t read more than desired, even if available</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        while (true) { // loop trying to read until we get some data or hit the overall timeout, if we have one</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_90'/>
+90
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_90'>2</a>
+<span>
+1. read : negated conditional &rarr; KILLED<br/>
+2. read : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (expired())</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                throw new SocketTimeoutException(&#34;Read timeout&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            try {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                final int read = super.read(b, off, len);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_95'/>
+95
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_95'>2</a>
+<span>
+1. read : negated conditional &rarr; KILLED<br/>
+2. read : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (read == -1) { // completed</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    contentLength = readPos;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                } else {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_98'/>
+98
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_98'>1</a>
+<span>
+1. read : Replaced integer subtraction with addition &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    remaining -= read;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_99'/>
+99
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_99'>1</a>
+<span>
+1. read : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    readPos += read;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_101'/>
+101
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_101'>1</a>
+<span>
+1. read : removed call to org/jsoup/internal/ControllableInputStream::emitProgress &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                emitProgress();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_102'/>
+102
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_102'>2</a>
+<span>
+1. read : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+2. read : replaced int return with 0 for org/jsoup/internal/ControllableInputStream::read &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                return read;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            } catch (SocketTimeoutException e) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_104'/>
+104
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_104'>4</a>
+<span>
+1. read : removed conditional - replaced equality check with false &rarr; SURVIVED<br/>
+2. read : negated conditional &rarr; KILLED<br/>
+3. read : negated conditional &rarr; KILLED<br/>
+4. read : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                if (expired() || timeout == 0)</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>                    throw e;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_106'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_107'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_110'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_111'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Reads this inputstream to a ByteBuffer. The supplied max may be less than the inputstream&#39;s max, to support</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * reading just the first bytes.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_113'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_114'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static ByteBuffer readToByteBuffer(InputStream in, int max) throws IOException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_115'/>
+115
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_115'>3</a>
+<span>
+1. readToByteBuffer : removed call to org/jsoup/helper/Validate::isTrue &rarr; SURVIVED<br/>
+2. readToByteBuffer : changed conditional boundary &rarr; KILLED<br/>
+3. readToByteBuffer : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        Validate.isTrue(max &#62;= 0, &#34;maxSize must be 0 (unlimited) or larger&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_116'/>
+116
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_116'>1</a>
+<span>
+1. readToByteBuffer : removed call to org/jsoup/helper/Validate::notNull &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        Validate.notNull(in);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_117'/>
+117
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_117'>2</a>
+<span>
+1. readToByteBuffer : changed conditional boundary &rarr; KILLED<br/>
+2. readToByteBuffer : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        final boolean capped = max &#62; 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        final byte[] readBuf = SimpleBufferedInput.BufferPool.borrow(); // Share the same byte[] pool as SBI</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_119'/>
+119
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_119'>2</a>
+<span>
+1. readToByteBuffer : negated conditional &rarr; KILLED<br/>
+2. readToByteBuffer : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        final int outSize = capped ? Math.min(max, DefaultBufferSize) : DefaultBufferSize;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        ByteBuffer outBuf = ByteBuffer.allocate(outSize);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_121'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_122'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        try {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            int remaining = max;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_124'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            int read;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_125'/>
+125
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_125'>4</a>
+<span>
+1. readToByteBuffer : negated conditional &rarr; KILLED<br/>
+2. readToByteBuffer : negated conditional &rarr; KILLED<br/>
+3. readToByteBuffer : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+4. readToByteBuffer : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            while ((read = in.read(readBuf, 0, capped ? Math.min(remaining, DefaultBufferSize) : DefaultBufferSize)) != -1) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_126'/>
+126
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_126'>2</a>
+<span>
+1. readToByteBuffer : changed conditional boundary &rarr; KILLED<br/>
+2. readToByteBuffer : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (outBuf.remaining() &#60; read) { // needs to grow</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_127'/>
+127
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_127'>2</a>
+<span>
+1. readToByteBuffer : Replaced double multiplication with division &rarr; SURVIVED<br/>
+2. readToByteBuffer : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>                    int newCapacity = (int) Math.max(outBuf.capacity() * 1.5, outBuf.capacity() + read);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    ByteBuffer newBuffer = ByteBuffer.allocate(newCapacity);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_129'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    outBuf.flip();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_130'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    newBuffer.put(outBuf);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    outBuf = newBuffer;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_133'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                outBuf.put(readBuf, 0, read);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_134'/>
+134
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_134'>2</a>
+<span>
+1. readToByteBuffer : negated conditional &rarr; KILLED<br/>
+2. readToByteBuffer : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (capped) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_135'/>
+135
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_135'>1</a>
+<span>
+1. readToByteBuffer : Replaced integer subtraction with addition &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    remaining -= read;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_136'/>
+136
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_136'>2</a>
+<span>
+1. readToByteBuffer : changed conditional boundary &rarr; TIMED_OUT<br/>
+2. readToByteBuffer : negated conditional &rarr; TIMED_OUT<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>                    if (remaining &#60;= 0) break;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_137'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_138'/>
+138
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_138'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_139'/>
+139
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_139'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            outBuf.flip(); // Prepare the buffer for reading</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_140'/>
+140
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_140'>2</a>
+<span>
+1. readToByteBuffer : mutated return of Object value for org/jsoup/internal/ControllableInputStream::readToByteBuffer to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+2. readToByteBuffer : replaced return value with null for org/jsoup/internal/ControllableInputStream::readToByteBuffer &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return outBuf;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        } finally {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_142'/>
+142
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_142'>1</a>
+<span>
+1. readToByteBuffer : removed call to org/jsoup/internal/SoftPool::release &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            SimpleBufferedInput.BufferPool.release(readBuf);</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_143'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_144'/>
+144
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_144'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_145'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_146'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @SuppressWarnings(&#34;NonSynchronizedMethodOverridesSynchronizedMethod&#34;) // not synchronized in later JDKs</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_147'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override public void reset() throws IOException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_148'/>
+148
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_148'>1</a>
+<span>
+1. reset : removed call to java/io/FilterInputStream::reset &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        super.reset();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_149'/>
+149
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_149'>1</a>
+<span>
+1. reset : Replaced integer subtraction with addition &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        remaining = maxSize - markPos;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_150'/>
+150
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_150'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        readPos = markPos; // readPos is used for progress emits</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_151'/>
+151
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_151'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_152'/>
+152
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_152'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_153'/>
+153
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_153'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @SuppressWarnings(&#34;NonSynchronizedMethodOverridesSynchronizedMethod&#34;) // not synchronized in later JDKs</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_154'/>
+154
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_154'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override public void mark(int readlimit) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_155'/>
+155
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_155'>1</a>
+<span>
+1. mark : removed call to java/io/FilterInputStream::mark &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        super.mark(readlimit);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_156'/>
+156
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_156'>1</a>
+<span>
+1. mark : Replaced integer subtraction with addition &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        markPos = maxSize - remaining;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_157'/>
+157
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_157'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_158'/>
+158
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_158'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_159'/>
+159
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_159'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_160'/>
+160
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_160'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     Check if the underlying InputStream has been read fully. There may still content in buffers to be consumed, and</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_161'/>
+161
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_161'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     read methods may return -1 if hit the read limit.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_162'/>
+162
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_162'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     @return true if the underlying inputstream has been read fully.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_163'/>
+163
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_163'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_164'/>
+164
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_164'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean baseReadFully() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_165'/>
+165
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_165'>3</a>
+<span>
+1. baseReadFully : replaced boolean return with false for org/jsoup/internal/ControllableInputStream::baseReadFully &rarr; SURVIVED<br/>
+2. baseReadFully : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+3. baseReadFully : replaced boolean return with true for org/jsoup/internal/ControllableInputStream::baseReadFully &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        return buff.baseReadFully();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_166'/>
+166
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_166'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_167'/>
+167
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_167'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_168'/>
+168
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_168'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_169'/>
+169
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_169'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     Get the max size of this stream (how far at most will be read from the underlying stream)</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_170'/>
+170
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_170'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return the max size</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_171'/>
+171
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_171'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_172'/>
+172
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_172'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int max() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_173'/>
+173
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_173'>2</a>
+<span>
+1. max : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+2. max : replaced int return with 0 for org/jsoup/internal/ControllableInputStream::max &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return maxSize;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_174'/>
+174
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_174'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_175'/>
+175
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_175'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_176'/>
+176
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_176'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void max(int newMax) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_177'/>
+177
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_177'>2</a>
+<span>
+1. max : Replaced integer subtraction with addition &rarr; KILLED<br/>
+2. max : Replaced integer addition with subtraction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        remaining += newMax - maxSize; // update remaining to reflect the difference in the new maxsize</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_178'/>
+178
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_178'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        maxSize = newMax;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_179'/>
+179
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_179'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_180'/>
+180
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_180'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_181'/>
+181
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_181'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void allowClose(boolean allowClose) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_182'/>
+182
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_182'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.allowClose = allowClose;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_183'/>
+183
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_183'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_184'/>
+184
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_184'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_185'/>
+185
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_185'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override public void close() throws IOException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_186'/>
+186
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_186'>3</a>
+<span>
+1. close : removed conditional - replaced equality check with false &rarr; SURVIVED<br/>
+2. close : removed call to java/io/FilterInputStream::close &rarr; SURVIVED<br/>
+3. close : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (allowClose) super.close();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_187'/>
+187
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_187'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_188'/>
+188
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_188'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_189'/>
+189
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_189'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public ControllableInputStream timeout(long startTimeNanos, long timeoutMillis) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_190'/>
+190
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_190'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.startTime = startTimeNanos;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_191'/>
+191
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_191'>1</a>
+<span>
+1. timeout : Replaced long multiplication with division &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.timeout = timeoutMillis * 1000000;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_192'/>
+192
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_192'>2</a>
+<span>
+1. timeout : mutated return of Object value for org/jsoup/internal/ControllableInputStream::timeout to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+2. timeout : replaced return value with null for org/jsoup/internal/ControllableInputStream::timeout &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return this;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_193'/>
+193
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_193'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_194'/>
+194
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_194'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_195'/>
+195
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_195'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private void emitProgress() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_196'/>
+196
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_196'>2</a>
+<span>
+1. emitProgress : negated conditional &rarr; KILLED<br/>
+2. emitProgress : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (progress == null) return;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_197'/>
+197
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_197'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // calculate percent complete if contentLength &#62; 0 (and cap to 100.0 if totalRead &#62; contentLength):</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_198'/>
+198
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_198'>4</a>
+<span>
+1. emitProgress : changed conditional boundary &rarr; SURVIVED<br/>
+2. emitProgress : Replaced float multiplication with division &rarr; KILLED<br/>
+3. emitProgress : Replaced float division with multiplication &rarr; KILLED<br/>
+4. emitProgress : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        float percent = contentLength &#62; 0 ? Math.min(100f, readPos * 100f / contentLength) : 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_199'/>
+199
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_199'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        //noinspection unchecked</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_200'/>
+200
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_200'>1</a>
+<span>
+1. emitProgress : removed call to org/jsoup/Progress::onProgress &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        ((Progress&#60;Object&#62;) progress).onProgress(readPos, contentLength, percent, progressContext); // (not actually unchecked - verified when set)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_201'/>
+201
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_201'>2</a>
+<span>
+1. emitProgress : negated conditional &rarr; KILLED<br/>
+2. emitProgress : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (percent == 100.0f) progress = null; // detach once we reach 100%, so that any subsequent buffer hits don&#39;t report 100 again</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_202'/>
+202
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_202'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_203'/>
+203
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_203'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_204'/>
+204
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_204'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public &#60;ProgressContext&#62; ControllableInputStream onProgress(int contentLength, Progress&#60;ProgressContext&#62; callback, ProgressContext context) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_205'/>
+205
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_205'>1</a>
+<span>
+1. onProgress : removed call to org/jsoup/helper/Validate::notNull &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        Validate.notNull(callback);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_206'/>
+206
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_206'>1</a>
+<span>
+1. onProgress : removed call to org/jsoup/helper/Validate::notNull &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        Validate.notNull(context);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_207'/>
+207
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_207'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.contentLength = contentLength;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_208'/>
+208
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_208'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.progress = callback;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_209'/>
+209
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_209'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.progressContext = context;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_210'/>
+210
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_210'>2</a>
+<span>
+1. onProgress : mutated return of Object value for org/jsoup/internal/ControllableInputStream::onProgress to ( if (x != null) null else throw new RuntimeException ) &rarr; SURVIVED<br/>
+2. onProgress : replaced return value with null for org/jsoup/internal/ControllableInputStream::onProgress &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        return this;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_211'/>
+211
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_211'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_212'/>
+212
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_212'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_213'/>
+213
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_213'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private boolean expired() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_214'/>
+214
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_214'>2</a>
+<span>
+1. expired : negated conditional &rarr; KILLED<br/>
+2. expired : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (timeout == 0)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_215'/>
+215
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_215'>2</a>
+<span>
+1. expired : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+2. expired : replaced boolean return with true for org/jsoup/internal/ControllableInputStream::expired &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return false;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_216'/>
+216
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_216'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_217'/>
+217
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_217'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        final long now = System.nanoTime();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_218'/>
+218
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_218'>1</a>
+<span>
+1. expired : Replaced long subtraction with addition &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        final long dur = now - startTime;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_219'/>
+219
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_219'>4</a>
+<span>
+1. expired : changed conditional boundary &rarr; SURVIVED<br/>
+2. expired : negated conditional &rarr; KILLED<br/>
+3. expired : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+4. expired : replaced boolean return with true for org/jsoup/internal/ControllableInputStream::expired &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        return (dur &#62; timeout);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_220'/>
+220
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_220'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_221'/>
+221
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_221'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_222'/>
+222
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_222'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public BufferedInputStream inputStream() {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_223'/>
+223
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_223'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // called via HttpConnection.Response.bodyStream(), needs an OG BufferedInputStream</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_224'/>
+224
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_224'>2</a>
+<span>
+1. inputStream : mutated return of Object value for org/jsoup/internal/ControllableInputStream::inputStream to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+2. inputStream : replaced return value with null for org/jsoup/internal/ControllableInputStream::inputStream &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return new BufferedInputStream(buff);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_225'/>
+225
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_225'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_226'/>
+226
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_226'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_39'>39</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_39'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:failsIfNotAuthenticated(java.lang.String)]/[test-template-invocation:#1]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> removed call to org/jsoup/helper/Validate::isTrue &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_55'>55</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_55'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>wrap<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:failsIfNotAuthenticated(java.lang.String)]/[test-template-invocation:#1]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>wrap<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with false &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_56'>56</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_56'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>wrap<br/><b>Killed by : </b>none</span></span> mutated return of Object value for org/jsoup/internal/ControllableInputStream::wrap to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>wrap<br/><b>Killed by : </b>none</span></span> replaced return value with null for org/jsoup/internal/ControllableInputStream::wrap &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_58'>58</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_58'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>wrap<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:failsIfNotAuthenticated(java.lang.String)]/[test-template-invocation:#1]</span></span> mutated return of Object value for org/jsoup/internal/ControllableInputStream::wrap to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>wrap<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:failsIfNotAuthenticated(java.lang.String)]/[test-template-invocation:#1]</span></span> replaced return value with null for org/jsoup/internal/ControllableInputStream::wrap &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_70'>70</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_70'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>wrap<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:failsIfNotAuthenticated(java.lang.String)]/[test-template-invocation:#1]</span></span> mutated return of Object value for org/jsoup/internal/ControllableInputStream::wrap to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>wrap<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:failsIfNotAuthenticated(java.lang.String)]/[test-template-invocation:#1]</span></span> replaced return value with null for org/jsoup/internal/ControllableInputStream::wrap &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_75'>75</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_75'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:progressListener(java.lang.String)]/[test-template-invocation:#2]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:progressListener(java.lang.String)]/[test-template-invocation:#2]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:progressListener(java.lang.String)]/[test-template-invocation:#2]</span></span> removed call to org/jsoup/internal/ControllableInputStream::emitProgress &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_77'>77</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_77'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:discardsSpuriousByteOrderMarkWhenNoCharsetSet()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_78'>78</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_78'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:discardsSpuriousByteOrderMarkWhenNoCharsetSet()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:discardsSpuriousByteOrderMarkWhenNoCharsetSet()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testDetectCharsetEncodingDeclaration()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:discardsSpuriousByteOrderMarkWhenNoCharsetSet()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_79'>79</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_79'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> replaced int return with 0 for org/jsoup/internal/ControllableInputStream::read &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_80'>80</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_80'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:discardsSpuriousByteOrderMarkWhenNoCharsetSet()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:canInterruptBodyStringRead()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_83'>83</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_83'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:canInterruptThenJoinASpawnedThread()]</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:canInterruptThenJoinASpawnedThread()]</span></span> replaced int return with 0 for org/jsoup/internal/ControllableInputStream::read &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_86'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:canFetchBinaryAsBytes()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:maxBodySize()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_90'>90</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_90'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:streamParserUncheckedExceptionOnTimeoutInStream()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_95'>95</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_95'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:progressListener(java.lang.String)]/[test-template-invocation:#2]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_98'>98</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_98'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_99'>99</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_99'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_101'>101</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_101'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> removed call to org/jsoup/internal/ControllableInputStream::emitProgress &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_102'>102</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_102'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12]</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12]</span></span> replaced int return with 0 for org/jsoup/internal/ControllableInputStream::read &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_104'>104</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_104'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:totalTimeout()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:totalTimeout()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>read<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:totalTimeout()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>read<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with false &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_115'>115</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_115'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesUnlimitedRead()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesUnlimitedRead()]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>none</span></span> removed call to org/jsoup/helper/Validate::isTrue &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_116'>116</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_116'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>none</span></span> removed call to org/jsoup/helper/Validate::notNull &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_117'>117</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_117'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesUnlimitedRead()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesUnlimitedRead()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_119'>119</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_119'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_125'>125</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_125'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesUnlimitedRead()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesUnlimitedRead()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesUnlimitedRead()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_126'>126</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_126'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesUnlimitedRead()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_127'>127</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_127'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>none</span></span> Replaced double multiplication with division &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_134'>134</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_134'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesUnlimitedRead()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_135'>135</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_135'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_136'>136</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_136'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; TIMED_OUT</p> <p class='TIMED_OUT'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_140'>140</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_140'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesUnlimitedRead()]</span></span> mutated return of Object value for org/jsoup/internal/ControllableInputStream::readToByteBuffer to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesUnlimitedRead()]</span></span> replaced return value with null for org/jsoup/internal/ControllableInputStream::readToByteBuffer &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_142'>142</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_142'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>readToByteBuffer<br/><b>Killed by : </b>none</span></span> removed call to org/jsoup/internal/SoftPool::release &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_148'>148</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_148'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>reset<br/><b>Killed by : </b>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:discardsSpuriousByteOrderMarkWhenNoCharsetSet()]</span></span> removed call to java/io/FilterInputStream::reset &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_149'>149</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_149'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>reset<br/><b>Killed by : </b>none</span></span> Replaced integer subtraction with addition &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_155'>155</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_155'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>mark<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12]</span></span> removed call to java/io/FilterInputStream::mark &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_156'>156</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_156'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>mark<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_165'>165</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_165'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>baseReadFully<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>baseReadFully<br/><b>Killed by : </b>none</span></span> replaced boolean return with false for org/jsoup/internal/ControllableInputStream::baseReadFully &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>baseReadFully<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> replaced boolean return with true for org/jsoup/internal/ControllableInputStream::baseReadFully &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_173'>173</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_173'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>max<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testDetectCharsetEncodingDeclaration()]</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>max<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:maxBodySize()]</span></span> replaced int return with 0 for org/jsoup/internal/ControllableInputStream::max &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_177'>177</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_177'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>max<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> Replaced integer subtraction with addition &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>max<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testDetectCharsetEncodingDeclaration()]</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_186'>186</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_186'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>close<br/><b>Killed by : </b>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testDetectCharsetEncodingDeclaration()]</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>close<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with false &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>close<br/><b>Killed by : </b>none</span></span> removed call to java/io/FilterInputStream::close &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_191'>191</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_191'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>timeout<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:totalTimeout()]</span></span> Replaced long multiplication with division &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_192'>192</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_192'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>timeout<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:bodyStreamConstrainedViaBufferUp()]</span></span> mutated return of Object value for org/jsoup/internal/ControllableInputStream::timeout to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>timeout<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:bodyStreamConstrainedViaBufferUp()]</span></span> replaced return value with null for org/jsoup/internal/ControllableInputStream::timeout &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_196'>196</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_196'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>emitProgress<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>emitProgress<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_198'>198</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_198'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>emitProgress<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>emitProgress<br/><b>Killed by : </b>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:progressListener(java.lang.String)]/[test-template-invocation:#2]</span></span> Replaced float multiplication with division &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>emitProgress<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> Replaced float division with multiplication &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>emitProgress<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_200'>200</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_200'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>emitProgress<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> removed call to org/jsoup/Progress::onProgress &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_201'>201</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_201'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>emitProgress<br/><b>Killed by : </b>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>emitProgress<br/><b>Killed by : </b>org.jsoup.integration.SessionIT.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionIT]/[method:multiThreadWithProgressListener()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_205'>205</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_205'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>onProgress<br/><b>Killed by : </b>none</span></span> removed call to org/jsoup/helper/Validate::notNull &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_206'>206</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_206'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>onProgress<br/><b>Killed by : </b>none</span></span> removed call to org/jsoup/helper/Validate::notNull &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_210'>210</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_210'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>onProgress<br/><b>Killed by : </b>none</span></span> mutated return of Object value for org/jsoup/internal/ControllableInputStream::onProgress to ( if (x != null) null else throw new RuntimeException ) &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>onProgress<br/><b>Killed by : </b>none</span></span> replaced return value with null for org/jsoup/internal/ControllableInputStream::onProgress &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_214'>214</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_214'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>expired<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>expired<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_215'>215</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_215'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>expired<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12]</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>expired<br/><b>Killed by : </b>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12]</span></span> replaced boolean return with true for org/jsoup/internal/ControllableInputStream::expired &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_218'>218</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_218'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>expired<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:bodyStreamConstrainedViaBufferUp()]</span></span> Replaced long subtraction with addition &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_219'>219</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_219'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>expired<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>expired<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:bodyStreamConstrainedViaBufferUp()]</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>expired<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:bodyStreamConstrainedViaBufferUp()]</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>expired<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:bodyStreamConstrainedViaBufferUp()]</span></span> replaced boolean return with true for org/jsoup/internal/ControllableInputStream::expired &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@6cbbfe29_224'>224</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@6cbbfe29_224'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>inputStream<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> mutated return of Object value for org/jsoup/internal/ControllableInputStream::inputStream to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>inputStream<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> replaced return value with null for org/jsoup/internal/ControllableInputStream::inputStream &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+<li class='mutator'>RETURN_VALS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#32] (64 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesDeleteWithoutBody()] (8 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#32] (15 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testTemplateInsideTable()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:postFiles(java.lang.String)]/[test-template-invocation:#2] (42 ms)</li><li>org.jsoup.integration.ParseTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ParseTest]/[method:testWikiExpandedFromString()] (27 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#29] (48 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#17] (85 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#20] (7 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:supportsBOMinFiles()] (8 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:sendsRequestBodyJsonWithoutData()] (10 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesChunkedInputStream()] (56 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#7] (11 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#20] (7 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksFromFetch()] (13 ms)</li><li>org.jsoup.integration.SessionIT.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionIT]/[method:multiThreadWithoutNewRequestBlowsUp()] (11011 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#2] (10 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:ignoresExceptionIfSoConfigured()] (9 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:streamParserGet(java.lang.String)]/[test-template-invocation:#1] (10 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:fetchToW3c()] (11 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#17] (28 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[test-template:canAuthToProxyAndServer(java.lang.String)]/[test-template-invocation:#2] (28 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#28] (35 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:infiniteReadSupported()] (3015 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[test-template:fetchViaProxy(java.lang.String)]/[test-template-invocation:#1] (9 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesPostMultipartWithoutInputstream()] (9 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:maxBodySizeInReadToByteBuffer()] (16 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#10] (72 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:supportsDeflate()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:bodyAndBytesAvailableBeforeParse()] (22 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#10] (34 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:postFiles(java.lang.String)]/[test-template-invocation:#1] (18 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:wrongMetaCharsetFallback()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesPostFor307()] (11 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:loadsZGzipPath()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:preservesUrlFragment()] (7 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesFakeGzipPath()] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#22] (9 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#18] (5 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:canInterruptBodyStringRead()] (3011 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesUnlimitedRead()] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#33] (7 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#21] (5 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:streamerSupportsZippedUTF8BOM()] (6 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:parseSequenceInputStream()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:canConnectToLocalTlsServer()] (28 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:loadsGzipPath()] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#6] (7 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#21] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:streamParserGet(java.lang.String)]/[test-template-invocation:#2] (12 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#3] (42 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:throwsExceptionOn404()] (5 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:supportsUTF8BOM()] (6 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#18] (5 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:slowReadOk()] (3012 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[test-template:canAuthToProxyAndServer(java.lang.String)]/[test-template-invocation:#1] (27 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#33] (10 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#29] (6 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canParseFile()] (6 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[test-template:fetchViaProxy(java.lang.String)]/[test-template-invocation:#2] (20 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:combinesSameHeadersWithComma()] (6 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#30] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:willEscapePathInRedirect()] (8 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:discardsSpuriousByteOrderMarkWhenNoCharsetSet()] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#27] (6 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:bodyAfterParseThrowsValidationError()] (9 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:firstMetaElementWithCharsetShouldBeUsedForDecoding()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:handlesRedirect()] (8 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#19] (66 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:fetchURIWithWhitespace()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:progressListener(java.lang.String)]/[test-template-invocation:#2] (16 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:failsIfNotAuthenticated(java.lang.String)]/[test-template-invocation:#1] (11 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:canInterruptThenJoinASpawnedThread()] (3013 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testDetectCharsetEncodingDeclaration()] (2 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:fetchUnicodeUrl()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:getUtf8Bom()] (7 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#34] (8 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#11] (11 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:canInterruptDocumentRead()] (3013 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[method:redirectViaProxy()] (11 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[test-template:canAuthenticateToProxy(java.lang.String)]/[test-template-invocation:#2] (34 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#5] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#4] (40 ms)</li><li>org.jsoup.integration.ParseTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ParseTest]/[method:testLowercaseUtf8Charset()] (3 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#38] (5 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#15] (363 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksFromXmlFetch()] (3 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#22] (6 ms)</li><li>org.jsoup.integration.SessionIT.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionIT]/[method:multiThread()] (393 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:sendsRequestBodyJsonWithData()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:maxBodySize()] (66 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#31] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:formLoginFlow()] (28 ms)</li><li>org.jsoup.integration.ParseTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ParseTest]/[method:testWikiFromString()] (5 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#28] (19 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:handlesLargerContentLengthParseRead()] (11 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:canFetchBinaryAsBytes()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:failsIfNotAuthenticated(java.lang.String)]/[test-template-invocation:#2] (27 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#35] (5 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#12] (9 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:canSendSecFetchHeaders()] (9 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:loadsGzipFile()] (4 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[test-template:canAuthenticateToProxy(java.lang.String)]/[test-template-invocation:#1] (24 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#4] (18 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:baseHrefCorrectAfterHttpEquiv()] (12 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#5] (5 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#16] (7 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:handlesFakeGzipFile()] (5 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:streamParserUncheckedExceptionOnTimeoutInStream()] (5013 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#23] (10 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:discardsSpuriousByteOrderMark()] (13 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:noExtraNULLBytes()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:doesGet(java.lang.String)]/[test-template-invocation:#2] (10 ms)</li><li>org.jsoup.integration.ParseTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ParseTest]/[method:testHtml5Charset()] (3 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#25] (20 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:canConnectToLocalServer()] (14 ms)</li><li>org.jsoup.integration.SessionTest.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionTest]/[method:testCanChangeParsers()] (12 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:fetchURl()] (10 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:repeatable()] (15 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#13] (5 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#36] (19 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:postHtmlFile()] (31 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[method:proxyForSession()] (80 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:bodyStreamConstrainedViaBufferUp()] (6 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#6] (26 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:loadsZGzipFile()] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#3] (10 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:canAuthenticate(java.lang.String)]/[test-template-invocation:#1] (10 ms)</li><li>org.jsoup.integration.SessionIT.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionIT]/[method:multiThreadWithProgressListener()] (33 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:testParseRss()] (7 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#13] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#36] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:fetchHandlesXmlAsHtmlWhenParserSet()] (6 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:parseParseThrowsValidates()] (7 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#24] (2655 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:secondMetaElementWithContentTypeContainsCharsetParameter()] (6 ms)</li><li>org.jsoup.integration.SessionTest.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionTest]/[method:testPathScopedCookiesOnRedirect()] (12 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:secFetchHeadersSurviveRedirect()] (9 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:doesGet(java.lang.String)]/[test-template-invocation:#1] (13 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:progressListener(java.lang.String)]/[test-template-invocation:#1] (20 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#26] (8 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testInvalidTableContents()] (3 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:incorrectAuth(java.lang.String)]/[test-template-invocation:#2] (134 ms)</li><li>org.jsoup.integration.ParseTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ParseTest]/[method:testFileParseNoCharsetMethod()] (9 ms)</li><li>org.jsoup.parser.ParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.ParserTest]/[method:testUtf8()] (2 ms)</li><li>org.jsoup.nodes.DocumentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.DocumentTest]/[method:testLocation()] (3 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#37] (10 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:supportsZippedUTF8BOM()] (10 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#14] (9 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#7] (17 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:canAuthenticate(java.lang.String)]/[test-template-invocation:#2] (44 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#2] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:sendHeadRequest()] (8 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#37] (4 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:totalTimeout()] (3008 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#14] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:formLoginFlow2()] (11 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesNotPostFor302()] (15 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#25] (53 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:streamParserCheckedExceptionOnTimeoutInSelect()] (5009 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#30] (6 ms)</li><li>org.jsoup.parser.XmlTreeBuilderTest.[engine:junit-jupiter]/[class:org.jsoup.parser.XmlTreeBuilderTest]/[method:testSupplyParserToDataStream()] (3 ms)</li><li>org.jsoup.integration.ParseTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ParseTest]/[method:testXwikiExpanded()] (22 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesXmlDeclAndCommentsBeforeDoctype()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesDeleteWithBody()] (7 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#23] (58 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:sendsRequestBody()] (6 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesPut()] (6 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#38] (7 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#15] (10 ms)</li><li>org.jsoup.helper.W3CDomTest.[engine:junit-jupiter]/[class:org.jsoup.helper.W3CDomTest]/[method:namespacePreservation()] (5 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:fallbackToUtfIfCantEncode()] (6 ms)</li><li>org.jsoup.integration.ParseTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ParseTest]/[method:testBrokenHtml5CharsetWithASingleDoubleQuote()] (2 ms)</li><li>org.jsoup.integration.ParseTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ParseTest]/[method:testXwiki()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:multipleParsesOkAfterBufferUp()] (12 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#8] (23 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#9] (47 ms)</li><li>org.jsoup.nodes.DocumentTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.DocumentTest]/[method:testShiftJisRoundtrip()] (6 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:incorrectAuth(java.lang.String)]/[test-template-invocation:#1] (35 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#1] (7 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:remainingAfterFirstRead()] (13 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:supportsXmlCharsetDeclaration()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:imageXmlMimeType()] (8 ms)</li><li>org.jsoup.nodes.FormElementTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.FormElementTest]/[method:formSubmissionCarriesCookiesFromSession()] (10 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#34] (5 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#11] (7 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#26] (9 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:streamerSupportsBOMinFiles()] (6 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#19] (150 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#31] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesPost()] (11 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:requestCookiesSurviveRedirect()] (8 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:multiCookieSet()] (10 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#24] (2134 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:handlesWrongContentLengthDuringBufferedRead()] (66 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:handlesUnknownEscapesAcrossBuffer()] (19 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#16] (6 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:fetchHandlesXml()] (18 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:streamerGetUtf8Bom()] (5 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()] (11 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#9] (190 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#8] (8 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#1] (10 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:sendsRequestBodyWithUrlParams()] (7 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:characterReaderBuffer()] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#35] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testXmlParse(java.io.File)]/[test-template-invocation:#12] (4 ms)</li><li>org.jsoup.integration.FuzzFixesTest.[engine:junit-jupiter]/[class:org.jsoup.integration.FuzzFixesTest]/[test-template:testHtmlParse(java.io.File)]/[test-template-invocation:#27] (9 ms)</li><li>org.jsoup.integration.SessionTest.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionTest]/[method:testPathScopedCookies()] (16 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()] (4 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.8.1
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+# environment variables:
+AFL_AUTORESUME=1
+AFL_KILL_SIGNAL=9
+# command line:
+'afl-fuzz' '-i' 'inputs' '-o' 'output_dir' '-x' 'json.dict' '-L' '0' '-t' '500+' '-D' '-m' 'none' '--' './json_tokener_fuzz_harness' '@@'

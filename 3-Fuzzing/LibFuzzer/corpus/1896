@@ -1,0 +1,5 @@
+GET /sl HTTP/1.1
+Host: F
+Content-Type: application/vnd.lotus-screencam
+
+TXqGD

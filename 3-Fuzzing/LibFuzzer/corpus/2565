@@ -1,0 +1,7 @@
+GET /r.bin?C=ec&PY=wZ HTTP/1.1
+Host: m
+Upgrade: foo/2
+TE: trailers, chunked
+Connection: close
+
+daYVeUTlyedgmOPsfNCVuHcXXIEyOCPqziEWeXGospwFWgVdiiiXXFPCOUexrQZuVCxKtFYWiUyNGRFNQNMVhZgLdvlZoLaJgGkkuQTPDolpbNvOufDlgxycpqptAnqhunAumRifALZWBlqyXuqUlAuWNyvkrokZjb

@@ -1,0 +1,63 @@
+TRACE //&/=o# HTTP/1.1
+
+TRACE dtp://://=o#U HTTP/1.1
+
+TRACE ft://&p://#U HTTP/1.1
+
+TRACE ft:///&Do#U HTTP/1.1
+
+TRACE dtp://:/&o#U HTTP/2.1
+
+TRACE tp://p/&#U HTTP/1.1
+
+TRACE /#U HTTP/1.1
+
+TRACE t:///#U HTTP/3.1
+
+TRACE f://&/#& HTTP/1.1
+
+TRACE p:///#U HTTP/1.1
+
+TRACE p:///# HTTP/2.1
+
+TRACE p:///#U HTTP/4.1
+
+TRACE t:///&#R HTTP/2.1
+
+TRACE f:///#U HTTP/1.1
+
+TRACE f:///=#U HTTP/1.1
+
+TRACE /:/o#U HTTP/1.1
+
+TRACE p://p/&# HTTP/1.1
+
+TRACE /#U HTTP/1.1
+
+TRACE dtp://&&&:/&D#; HTTP/1.1
+
+TRACE fp:///&#U HTTP/1.1
+
+TRACE /&/q&#U HTTP/1.1
+
+TRACE d://&&&//&Do#U HTTP/1.1
+
+TRACE p://&/=o#U HTTP/1.1
+
+TRACE /&#U HTTP/1.1
+
+TRACE /#U HTTP/1.1
+
+TRACE /#U HTTP/2.1
+
+TRACE f://&/#& HTTP/1.1
+
+TRACE p:///#U HTTP/1.1
+
+TRACE p:///#R HTTP/2.1
+
+TRACE /#U HTTP/4.1
+
+TRACE //&#R HTTP/2.1
+
+TRACE ///#

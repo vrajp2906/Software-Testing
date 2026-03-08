@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>Functions.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.jsoup.internal;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.ArrayList;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.HashMap;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.HashSet;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.IdentityHashMap;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.List;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Map;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Set;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.function.Function;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * An internal class containing functions for use with {@link Map#computeIfAbsent(Object, Function)}.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>@SuppressWarnings({&#34;rawtypes&#34;, &#34;unchecked&#34;})</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public final class Functions {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_17'/>
+17
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_17'>4</a>
+<span>
+1. lambda$static$0 : removed call to java/util/ArrayList::&#60;init&#62; &rarr; KILLED<br/>
+2. lambda$static$0 : mutated return of Object value for org/jsoup/internal/Functions::lambda$static$0 to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+3. lambda$static$0 : replaced return of object reference value with [see docs for details] &rarr; KILLED<br/>
+4. lambda$static$0 : replaced return value with null for org/jsoup/internal/Functions::lambda$static$0 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    private static final Function ListFunction = key -&#62; new ArrayList&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_18'/>
+18
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_18'>4</a>
+<span>
+1. lambda$static$1 : removed call to java/util/HashSet::&#60;init&#62; &rarr; KILLED<br/>
+2. lambda$static$1 : mutated return of Object value for org/jsoup/internal/Functions::lambda$static$1 to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+3. lambda$static$1 : replaced return of object reference value with [see docs for details] &rarr; KILLED<br/>
+4. lambda$static$1 : replaced return value with null for org/jsoup/internal/Functions::lambda$static$1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    private static final Function SetFunction = key -&#62; new HashSet&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_19'/>
+19
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_19'>4</a>
+<span>
+1. lambda$static$2 : removed call to java/util/HashMap::&#60;init&#62; &rarr; KILLED<br/>
+2. lambda$static$2 : mutated return of Object value for org/jsoup/internal/Functions::lambda$static$2 to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+3. lambda$static$2 : replaced return of object reference value with [see docs for details] &rarr; KILLED<br/>
+4. lambda$static$2 : replaced return value with null for org/jsoup/internal/Functions::lambda$static$2 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    private static final Function MapFunction = key -&#62; new HashMap&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_20'/>
+20
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_20'>4</a>
+<span>
+1. lambda$static$3 : removed call to java/util/IdentityHashMap::&#60;init&#62; &rarr; KILLED<br/>
+2. lambda$static$3 : mutated return of Object value for org/jsoup/internal/Functions::lambda$static$3 to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+3. lambda$static$3 : replaced return of object reference value with [see docs for details] &rarr; KILLED<br/>
+4. lambda$static$3 : replaced return value with null for org/jsoup/internal/Functions::lambda$static$3 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>    private static final Function IdentityMapFunction = key -&#62; new IdentityHashMap&#60;&#62;();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    private Functions() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static &#60;T, U&#62; Function&#60;T, List&#60;U&#62;&#62; listFunction() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_26'/>
+26
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_26'>3</a>
+<span>
+1. listFunction : mutated return of Object value for org/jsoup/internal/Functions::listFunction to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+2. listFunction : replaced return of object reference value with [see docs for details] &rarr; KILLED<br/>
+3. listFunction : replaced return value with null for org/jsoup/internal/Functions::listFunction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return (Function&#60;T, List&#60;U&#62;&#62;) ListFunction;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static &#60;T, U&#62; Function&#60;T, Set&#60;U&#62;&#62; setFunction() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_30'/>
+30
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_30'>3</a>
+<span>
+1. setFunction : mutated return of Object value for org/jsoup/internal/Functions::setFunction to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+2. setFunction : replaced return of object reference value with [see docs for details] &rarr; KILLED<br/>
+3. setFunction : replaced return value with null for org/jsoup/internal/Functions::setFunction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return (Function&#60;T, Set&#60;U&#62;&#62;) SetFunction;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static &#60;T, K, V&#62; Function&#60;T, Map&#60;K, V&#62;&#62; mapFunction() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_34'/>
+34
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_34'>3</a>
+<span>
+1. mapFunction : mutated return of Object value for org/jsoup/internal/Functions::mapFunction to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+2. mapFunction : replaced return of object reference value with [see docs for details] &rarr; KILLED<br/>
+3. mapFunction : replaced return value with null for org/jsoup/internal/Functions::mapFunction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return (Function&#60;T, Map&#60;K, V&#62;&#62;) MapFunction;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static &#60;T, K, V&#62; Function&#60;T, IdentityHashMap&#60;K, V&#62;&#62; identityMapFunction() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_38'/>
+38
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_38'>3</a>
+<span>
+1. identityMapFunction : mutated return of Object value for org/jsoup/internal/Functions::identityMapFunction to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+2. identityMapFunction : replaced return of object reference value with [see docs for details] &rarr; KILLED<br/>
+3. identityMapFunction : replaced return value with null for org/jsoup/internal/Functions::identityMapFunction &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return (Function&#60;T, IdentityHashMap&#60;K, V&#62;&#62;) IdentityMapFunction;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@361d407a_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@361d407a_17'>17</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_17'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$static$0<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> removed call to java/util/ArrayList::&#60;init&#62; &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$static$0<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> mutated return of Object value for org/jsoup/internal/Functions::lambda$static$0 to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>lambda$static$0<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> replaced return of object reference value with [see docs for details] &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>lambda$static$0<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> replaced return value with null for org/jsoup/internal/Functions::lambda$static$0 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@361d407a_18'>18</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_18'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$static$1<br/><b>Killed by : </b>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:bailsIfRemovingProtocolThatsNotSet()]</span></span> removed call to java/util/HashSet::&#60;init&#62; &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$static$1<br/><b>Killed by : </b>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:bailsIfRemovingProtocolThatsNotSet()]</span></span> mutated return of Object value for org/jsoup/internal/Functions::lambda$static$1 to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>lambda$static$1<br/><b>Killed by : </b>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:bailsIfRemovingProtocolThatsNotSet()]</span></span> replaced return of object reference value with [see docs for details] &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>lambda$static$1<br/><b>Killed by : </b>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:bailsIfRemovingProtocolThatsNotSet()]</span></span> replaced return value with null for org/jsoup/internal/Functions::lambda$static$1 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@361d407a_19'>19</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_19'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$static$2<br/><b>Killed by : </b>org.jsoup.safety.SafelistTest.[engine:junit-jupiter]/[class:org.jsoup.safety.SafelistTest]/[method:testCopyConstructor_noSideEffectOnEnforcedAttributes()]</span></span> removed call to java/util/HashMap::&#60;init&#62; &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$static$2<br/><b>Killed by : </b>org.jsoup.safety.SafelistTest.[engine:junit-jupiter]/[class:org.jsoup.safety.SafelistTest]/[method:testCopyConstructor_noSideEffectOnEnforcedAttributes()]</span></span> mutated return of Object value for org/jsoup/internal/Functions::lambda$static$2 to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>lambda$static$2<br/><b>Killed by : </b>org.jsoup.safety.SafelistTest.[engine:junit-jupiter]/[class:org.jsoup.safety.SafelistTest]/[method:testCopyConstructor_noSideEffectOnEnforcedAttributes()]</span></span> replaced return of object reference value with [see docs for details] &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>lambda$static$2<br/><b>Killed by : </b>org.jsoup.safety.SafelistTest.[engine:junit-jupiter]/[class:org.jsoup.safety.SafelistTest]/[method:testCopyConstructor_noSideEffectOnEnforcedAttributes()]</span></span> replaced return value with null for org/jsoup/internal/Functions::lambda$static$2 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@361d407a_20'>20</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_20'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>lambda$static$3<br/><b>Killed by : </b>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:notAll()]</span></span> removed call to java/util/IdentityHashMap::&#60;init&#62; &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>lambda$static$3<br/><b>Killed by : </b>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:notAll()]</span></span> mutated return of Object value for org/jsoup/internal/Functions::lambda$static$3 to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>lambda$static$3<br/><b>Killed by : </b>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:notAll()]</span></span> replaced return of object reference value with [see docs for details] &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>lambda$static$3<br/><b>Killed by : </b>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:notAll()]</span></span> replaced return value with null for org/jsoup/internal/Functions::lambda$static$3 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@361d407a_26'>26</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_26'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>listFunction<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> mutated return of Object value for org/jsoup/internal/Functions::listFunction to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>listFunction<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> replaced return of object reference value with [see docs for details] &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>listFunction<br/><b>Killed by : </b>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()]</span></span> replaced return value with null for org/jsoup/internal/Functions::listFunction &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@361d407a_30'>30</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_30'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>setFunction<br/><b>Killed by : </b>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:bailsIfRemovingProtocolThatsNotSet()]</span></span> mutated return of Object value for org/jsoup/internal/Functions::setFunction to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>setFunction<br/><b>Killed by : </b>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:bailsIfRemovingProtocolThatsNotSet()]</span></span> replaced return of object reference value with [see docs for details] &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>setFunction<br/><b>Killed by : </b>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:bailsIfRemovingProtocolThatsNotSet()]</span></span> replaced return value with null for org/jsoup/internal/Functions::setFunction &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@361d407a_34'>34</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_34'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>mapFunction<br/><b>Killed by : </b>org.jsoup.safety.SafelistTest.[engine:junit-jupiter]/[class:org.jsoup.safety.SafelistTest]/[method:testCopyConstructor_noSideEffectOnEnforcedAttributes()]</span></span> mutated return of Object value for org/jsoup/internal/Functions::mapFunction to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>mapFunction<br/><b>Killed by : </b>org.jsoup.safety.SafelistTest.[engine:junit-jupiter]/[class:org.jsoup.safety.SafelistTest]/[method:testCopyConstructor_noSideEffectOnEnforcedAttributes()]</span></span> replaced return of object reference value with [see docs for details] &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>mapFunction<br/><b>Killed by : </b>org.jsoup.safety.SafelistTest.[engine:junit-jupiter]/[class:org.jsoup.safety.SafelistTest]/[method:testCopyConstructor_noSideEffectOnEnforcedAttributes()]</span></span> replaced return value with null for org/jsoup/internal/Functions::mapFunction &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@361d407a_38'>38</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@361d407a_38'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>identityMapFunction<br/><b>Killed by : </b>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:notAll()]</span></span> mutated return of Object value for org/jsoup/internal/Functions::identityMapFunction to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>identityMapFunction<br/><b>Killed by : </b>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:notAll()]</span></span> replaced return of object reference value with [see docs for details] &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>identityMapFunction<br/><b>Killed by : </b>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:notAll()]</span></span> replaced return value with null for org/jsoup/internal/Functions::identityMapFunction &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>CONSTRUCTOR_CALLS</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>EXPERIMENTAL_ARGUMENT_PROPAGATION</li>
+<li class='mutator'>EXPERIMENTAL_BIG_DECIMAL</li>
+<li class='mutator'>EXPERIMENTAL_BIG_INTEGER</li>
+<li class='mutator'>EXPERIMENTAL_MEMBER_VARIABLE</li>
+<li class='mutator'>EXPERIMENTAL_NAKED_RECEIVER</li>
+<li class='mutator'>EXPERIMENTAL_REMOVE_SWITCH_MUTATOR_[0-99]</li>
+<li class='mutator'>EXPERIMENTAL_RETURN_VALUES_MUTATOR</li>
+<li class='mutator'>EXPERIMENTAL_SWITCH</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INLINE_CONSTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NON_VOID_METHOD_CALLS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_IF</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_IF</li>
+<li class='mutator'>REMOVE_INCREMENTS</li>
+<li class='mutator'>RETURN_VALS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:emptyPseudo()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesDeleteWithoutBody()] (25 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testCleanAnchorProtocol()] (6 ms)</li><li>org.jsoup.nodes.ElementTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.ElementTest]/[method:testIs()] (14 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:postFiles(java.lang.String)]/[test-template-invocation:#2] (79 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:matchText()] (5 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:evaluatorMemosAreReset()] (6 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:sendsRequestBodyJsonWithoutData()] (10 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksFromFetch()] (42 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:canSelectIntoTemplate()] (11 ms)</li><li>org.jsoup.integration.SessionIT.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionIT]/[method:multiThreadWithoutNewRequestBlowsUp()] (11030 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testH20()] (10 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:lastChild()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:ignoresExceptionIfSoConfigured()] (13 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:preservesSourcePositionViaUserData()] (8 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:streamParserGet(java.lang.String)]/[test-template-invocation:#1] (15 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:fetchToW3c()] (13 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[test-template:canAuthToProxyAndServer(java.lang.String)]/[test-template-invocation:#2] (41 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:testPseudoEquals()] (4 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:infiniteReadSupported()] (3016 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[test-template:fetchViaProxy(java.lang.String)]/[test-template-invocation:#1] (16 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesPostMultipartWithoutInputstream()] (12 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:maxBodySizeInReadToByteBuffer()] (47 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:supportsDeflate()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:bodyAndBytesAvailableBeforeParse()] (24 ms)</li><li>org.jsoup.safety.SafelistTest.[engine:junit-jupiter]/[class:org.jsoup.safety.SafelistTest]/[method:testCopyConstructor_noSideEffectOnProtocols()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:handlesEmptyRedirect()] (60 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:nthOfType_advanced()] (8 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:basicWithImagesTest()] (6 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:postFiles(java.lang.String)]/[test-template-invocation:#1] (35 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testHandlesEmptyAttributes()] (4 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:testCombinedWithContains()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesPostFor307()] (11 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:notAll()] (4 ms)</li><li>org.jsoup.nodes.ElementTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.ElementTest]/[method:testClosest()] (17 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:preservesUrlFragment()] (8 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testRemoveAttributes()] (4 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:canInterruptBodyStringRead()] (3070 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:handlesCustomProtocols()] (9 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:blankTextNodesAreConsideredEmpty()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:canConnectToLocalTlsServer()] (96 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:and()] (7 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testIsValidDocument()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:streamParserGet(java.lang.String)]/[test-template-invocation:#2] (16 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:notAdjacent()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:throwsExceptionOn404()] (10 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:slowReadOk()] (3017 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[test-template:canAuthToProxyAndServer(java.lang.String)]/[test-template-invocation:#1] (30 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:handlesNoHrefAttribute()] (4 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testScriptTagInSafeList()] (5 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[test-template:fetchViaProxy(java.lang.String)]/[test-template-invocation:#2] (69 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:testBinaryContentTypeThrowsException()] (15 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:combinesSameHeadersWithComma()] (8 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:findBetweenSpan()] (11 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:selfClosingVoidIsNotAnError()] (16 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:handlesFramesets()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:willEscapePathInRedirect()] (14 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:bodyAfterParseThrowsValidationError()] (9 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:handlesRedirect()] (12 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:basicBehaviourTest()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:fetchURIWithWhitespace()] (9 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:progressListener(java.lang.String)]/[test-template-invocation:#2] (70 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:failsIfNotAuthenticated(java.lang.String)]/[test-template-invocation:#1] (13 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:canInterruptThenJoinASpawnedThread()] (3017 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:removeProtocols()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:fetchUnicodeUrl()] (11 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:getUtf8Bom()] (9 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:handlesControlCharactersAfterTagName()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:doesNotCreateImplicitLists()] (8 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:nthOfType_simple()] (6 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:resolvesRelativeLinks()] (4 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:canInterruptDocumentRead()] (3018 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[method:redirectViaProxy()] (14 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[test-template:canAuthenticateToProxy(java.lang.String)]/[test-template-invocation:#2] (49 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:addsTagOnAttributesIfNotSet()] (6 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:nthLastChild_advanced()] (5 ms)</li><li>org.jsoup.select.ElementsTest.[engine:junit-jupiter]/[class:org.jsoup.select.ElementsTest]/[method:hasText()] (4 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testDropXmlProc()] (7 ms)</li><li>org.jsoup.parser.PositionTest.[engine:junit-jupiter]/[class:org.jsoup.parser.PositionTest]/[method:tracksFromXmlFetch()] (6 ms)</li><li>org.jsoup.integration.SessionIT.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionIT]/[method:multiThread()] (999 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:firstChild()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:sendsRequestBodyJsonWithData()] (9 ms)</li><li>org.jsoup.safety.SafelistTest.[engine:junit-jupiter]/[class:org.jsoup.safety.SafelistTest]/[method:testCopyConstructor_noSideEffectOnAttributes()] (2 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:maxBodySize()] (420 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:formLoginFlow()] (21 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:nthChild_advanced()] (6 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:testAllElements()] (10 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:handlesLargerContentLengthParseRead()] (19 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:mathSvgStyleTest()] (16 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:canFetchBinaryAsBytes()] (9 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:failsIfNotAuthenticated(java.lang.String)]/[test-template-invocation:#2] (45 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:canSendSecFetchHeaders()] (8 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testRemoveTags()] (6 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:trimSelector()] (4 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[test-template:canAuthenticateToProxy(java.lang.String)]/[test-template-invocation:#1] (32 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:baseHrefCorrectAfterHttpEquiv()] (13 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:testPseudoBetween()] (4 ms)</li><li>org.jsoup.nodes.ElementTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.ElementTest]/[method:cssSelectorWithPipe()] (13 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testDropComments()] (5 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:emptyAttributePrefix()] (7 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:streamParserUncheckedExceptionOnTimeoutInStream()] (5016 ms)</li><li>org.jsoup.helper.DataUtilTest.[engine:junit-jupiter]/[class:org.jsoup.helper.DataUtilTest]/[method:discardsSpuriousByteOrderMark()] (16 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:mixCombinatorGroup()] (7 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:mixCombinator()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:doesGet(java.lang.String)]/[test-template-invocation:#2] (27 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:dropsUnresolvableRelativeLinks()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:canConnectToLocalServer()] (16 ms)</li><li>org.jsoup.integration.SessionTest.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionTest]/[method:testCanChangeParsers()] (9 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:testPseudoGreaterThan()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:repeatable()] (33 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:fetchURl()] (9 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:postHtmlFile()] (32 ms)</li><li>org.jsoup.integration.ProxyTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ProxyTest]/[method:proxyForSession()] (129 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:bailsIfRemovingProtocolThatsNotSet()] (4 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:bodyStreamConstrainedViaBufferUp()] (24 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:orAfterClass()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:canAuthenticate(java.lang.String)]/[test-template-invocation:#1] (61 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:testByAttributeRegexCombined()] (7 ms)</li><li>org.jsoup.integration.SessionIT.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionIT]/[method:multiThreadWithProgressListener()] (106 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:testParseRss()] (32 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:fetchHandlesXmlAsHtmlWhenParserSet()] (12 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[test-template:cleansCaseSensitiveElements(boolean)]/[test-template-invocation:#2] (5 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:onlyChild()] (4 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[test-template:safeListedProtocolShouldBeRetained(java.util.Locale)]/[test-template-invocation:#1] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:parseParseThrowsValidates()] (8 ms)</li><li>org.jsoup.integration.SafelistExtensionTest.[engine:junit-jupiter]/[class:org.jsoup.integration.SafelistExtensionTest]/[method:canCustomizeSafeTests()] (4 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:testPseudoCombined()] (5 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testRelaxed()] (3 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:lastOfType()] (12 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:handlesInputInTable()] (11 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:descendant()] (5 ms)</li><li>org.jsoup.integration.SessionTest.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionTest]/[method:testPathScopedCookiesOnRedirect()] (8 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:secFetchHeadersSurviveRedirect()] (12 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:doesGet(java.lang.String)]/[test-template-invocation:#1] (33 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:handlesAttributesWithNoValue()] (11 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:nestedMultiHas()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:progressListener(java.lang.String)]/[test-template-invocation:#1] (42 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:anyAttribute()] (4 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:nthOfType_unknownTag()] (10 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:incorrectAuth(java.lang.String)]/[test-template-invocation:#2] (291 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:firstOfType()] (4 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:notParas()] (5 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:deeperDescendant()] (6 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:canAuthenticate(java.lang.String)]/[test-template-invocation:#2] (72 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:notClass()] (4 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testDropsUnknownTags()] (3 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:is()] (8 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:sendHeadRequest()] (8 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[test-template:safeListedProtocolShouldBeRetained(java.util.Locale)]/[test-template-invocation:#2] (5 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:childElements()] (6 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:totalTimeout()] (3013 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[test-template:cleansCaseSensitiveElements(boolean)]/[test-template-invocation:#1] (9 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:formLoginFlow2()] (33 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:preservesRelativeLinksIfConfigured()] (11 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:testPseudoLessThan()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesNotPostFor302()] (11 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testDropImageScript()] (8 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:streamParserCheckedExceptionOnTimeoutInSelect()] (5015 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testDropScript()] (3 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testCleanJavascriptHref()] (5 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesDeleteWithBody()] (10 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:nthLastOfType_advanced()] (19 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:sendsRequestBody()] (9 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesPut()] (13 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:handlesNestedQuotesInAttribute()] (4 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testIsValidBodyHtml()] (8 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:parentFromSpecifiedDescender()] (7 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:testHasSibling()] (6 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testRemoveProtocols()] (3 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:handlesAllPseudoTag()] (4 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:selfClosingOnNonvoidIsError()] (11 ms)</li><li>org.jsoup.nodes.ElementTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.ElementTest]/[method:testChildSizeWithMixedContent()] (7 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:nthLastChild_simple()] (6 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:multipleParsesOkAfterBufferUp()] (10 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[test-template:incorrectAuth(java.lang.String)]/[test-template-invocation:#1] (33 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:remainingAfterFirstRead()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:imageXmlMimeType()] (33 ms)</li><li>org.jsoup.nodes.FormElementTest.[engine:junit-jupiter]/[class:org.jsoup.nodes.FormElementTest]/[method:formSubmissionCarriesCookiesFromSession()] (11 ms)</li><li>org.jsoup.safety.SafelistTest.[engine:junit-jupiter]/[class:org.jsoup.safety.SafelistTest]/[method:testCopyConstructor_noSideEffectOnEnforcedAttributes()] (3 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:nthLastOfType_simple()] (10 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:divHasDivPreceding()] (11 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:doesPost()] (14 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:requestCookiesSurviveRedirect()] (11 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:multiCookieSet()] (13 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:supplyOutputSettings()] (4 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:handlesWrongContentLengthDuringBufferedRead()] (21 ms)</li><li>org.jsoup.select.CssTest.[engine:junit-jupiter]/[class:org.jsoup.select.CssTest]/[method:nthChild_simple()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:handlesUnknownEscapesAcrossBuffer()] (85 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:adjacentSiblingsWithId()] (6 ms)</li><li>org.jsoup.parser.HtmlParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.HtmlParserTest]/[method:testUNewlines()] (11 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:adjacentSiblings()] (6 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:fetchHandlesXml()] (17 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:streamerGetUtf8Bom()] (8 ms)</li><li>org.jsoup.integration.ConnectIT.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectIT]/[method:noLimitAfterFirstRead()] (7 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:dropsConcealedJavascriptProtocolWhenRelativesLinksDisabled()] (4 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:allAttributes()] (5 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:testRemoveEnforcedAttributes()] (4 ms)</li><li>org.jsoup.safety.CleanerTest.[engine:junit-jupiter]/[class:org.jsoup.safety.CleanerTest]/[method:dropsConcealedJavascriptProtocolWhenRelativesLinksEnabled()] (7 ms)</li><li>org.jsoup.integration.ConnectTest.[engine:junit-jupiter]/[class:org.jsoup.integration.ConnectTest]/[method:sendsRequestBodyWithUrlParams()] (10 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:divHasSpanPreceding()] (6 ms)</li><li>org.jsoup.select.XpathTest.[engine:junit-jupiter]/[class:org.jsoup.select.XpathTest]/[test-template:cssAndXpathEquivalents(org.jsoup.nodes.Document, java.lang.String, java.lang.String)]/[test-template-invocation:#3] (9 ms)</li><li>org.jsoup.integration.SessionTest.[engine:junit-jupiter]/[class:org.jsoup.integration.SessionTest]/[method:testPathScopedCookies()] (15 ms)</li><li>org.jsoup.parser.StreamParserTest.[engine:junit-jupiter]/[class:org.jsoup.parser.StreamParserTest]/[method:canCleanlyConsumePortionOfUrl()] (9 ms)</li><li>org.jsoup.select.SelectorTest.[engine:junit-jupiter]/[class:org.jsoup.select.SelectorTest]/[method:generalSiblings()] (6 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.8.1
+
+</body>
+</html>

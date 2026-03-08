@@ -1,0 +1,129 @@
+TRACE fp://&U HTTP/1.1
+
+TRACE ftp://&q&& HTTP/1.1
+
+TRACE dp://&U HTTP/1.1
+
+TRACE p://pU HTTP/1.1
+
+TRACE p://& HTTP/1.1
+
+TRACE //U HTTP/1.1
+
+TRACE /#1 HTTP/2.1
+
+TRACE /&&? HTTP/1.1
+
+TRACE d://&]U HTTP/2.1
+
+TRACE ftp://? HTTP/1.1
+
+TRACE fp://&U HTTP/1.1
+
+TRACE ftp://p HTTP/1.1
+
+TRACE //&U HTTP/1.1
+
+TRACE ftp://p HTTP/1.1
+
+TRACE /&&U HTTP/1.1
+
+TRACE //U HTTP/2.1
+
+TRACE //U HTTP/1.1
+
+TRACE /? HTTP/1.1
+
+TRACE f://& HTTP/1.1
+
+TRACE /&&&:/U HTTP/4.1
+
+TRACE / HTTP/1.1
+
+TRACE /&&& HTTP/1.1
+
+TRACE /&? HTTP/1.1
+
+TRACE dp://& HTTP/2.1
+
+TRACE /& HTTP/1.1
+
+TRACE tp://&&&U HTTP/4.1
+
+TRACE / HTTP/2.1
+
+TRACE ftp://&&&? HTTP/1.1
+
+TRACE //&& HTTP/2.1
+
+TRACE ftp://p HTTP/1.1
+
+TRACE /? HTTP/1.1
+
+TRACE /&/ HTTP/1.1
+
+TRACE ft://o HTTP/2.1
+
+TRACE tp:/// HTTP/1.1
+
+TRACE fp://U HTTP/1.1
+
+TRACE / HTTP/1.1
+
+TRACE //&& HTTP/2.1
+
+TRACE f://U HTTP/1.1
+
+TRACE //&?= HTTP/1.1
+
+TRACE up://U HTTP/1.1
+
+TRACE /#U HTTP/4.1
+
+TRACE /&&? HTTP/1.1
+
+TRACE d://&/U HTTP/2.1
+
+TRACE fp://? HTTP/1.1
+
+TRACE /DU HTTP/2.1
+
+TRACE // HTTP/1.1
+
+TRACE ft://&??U HTTP/1.1
+
+TRACE ftp://U HTTP/2.1
+
+TRACE //U HTTP/1.1
+
+TRACE // HTTP/1.1
+
+TRACE up://U HTTP/1.1
+
+TRACE /#U HTTP/4.1
+
+TRACE /&&? HTTP/1.1
+
+TRACE /U HTTP/2.1
+
+TRACE //? HTTP/1.1
+
+TRACE / HTTP/2.1
+
+TRACE //p HTTP/1.1
+
+TRACE ftp://p HTTP/1.1
+
+TRACE /&&&?U HTTP/1.1
+
+TRACE //U HTTP/2.1
+
+TRACE /U HTTP/2.1
+
+TRACE /# HTTP/2.1
+
+TRACE dp:/// HTTP/1.1
+
+TRACE ftp://? HTTP/2.1
+
+f

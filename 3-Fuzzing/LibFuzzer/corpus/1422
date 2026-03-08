@@ -1,0 +1,7 @@
+POST /il.pdf?yB=OI HTTP/1.1
+Host: n
+From: a@b.com
+Accept: application/vnd.shana.informed.interchange, application/vnd.chemdraw+xml, image/vnd.dwg
+TE: chunked, gzip
+
+yCzIUjfBSZeSrjNTUDGIacFVOZiPHuKAwUZYCoxafkImlVgcqlCbuSSoyEwqlHQncJoIZzCdPaVYKweFHVXBMjNjlujaWnhlURLviYHvIzkRowHnLNWMfcnoSkReB

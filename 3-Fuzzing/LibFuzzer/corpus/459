@@ -1,0 +1,6 @@
+POST /na.txt?b=h&GO=P HTTP/1.1
+Host: F
+Upgrade: foo/2
+Accept-Charset: iso-8859-5
+
+YITmmPDcwVRbWAjTOpyaVOtvlBRQE
