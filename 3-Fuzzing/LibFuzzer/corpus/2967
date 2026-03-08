@@ -1,7 +1,0 @@
-PUT /r?H=b&wH=Z HTTP/1.1
-Host: T
-Accept-Charset: iso-8859-5
-Content-Encoding: compress
-Trailer: header-names
-
-HACDSUpPlXFqeVqqvfcDezyjBYPDaQbWTLHETZAyonnPBBFGkxoLdKGtZukdMBCfaBcMZYyLhvRwAhKuBbWqBAZiymKSNsqsQencMxw

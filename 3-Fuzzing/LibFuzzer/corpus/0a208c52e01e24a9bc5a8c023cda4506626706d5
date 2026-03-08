@@ -1,24 +1,0 @@
-LOCK /0
-Connection: keep-alive,
-
-PUT /
-Connection:keep-alive
-
-PUT /
-Connection: keep-alive
-
-PUT /g
-Connection: keep-alive
-
-LOCK /
-Connection: keep-alive
-
-PUT /1
-Connection:keep-alive
-
-PUT /
-Connection:keep-alive
-
-PUT /
-Connection:keep-alive
-

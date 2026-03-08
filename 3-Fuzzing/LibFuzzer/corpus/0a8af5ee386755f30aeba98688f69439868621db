@@ -1,20 +1,0 @@
-BIND s://+
-Connection: keep-alive
-
-BIND ps://+$1
-Connection: keep-alive,
-
-BIND ps://++++
-Connection: keep-alive,r 
-
-BIND //++ HTTP/1.1
-
-BIND / HTTP/1.1
-Hst:5
-
-BIND po://+ HTTP/1.1
-
-BIND ps://d
-Connection:keep-alive,
-
-B

@@ -1,97 +1,0 @@
-LOCK /D
-Connection:keep-alive,g=
-
-PUT /c:
-Connection:keep-alive
-
-PUT /
-Connection: keep-alive,
-
-PUT /
-Connection: keep-alive
-
-PUT /N:
-Connection:keep-alive,
-
-PUT /
-Connection: keEp-alive,n
-
-PUT /c
-Connection:keep-alive
-
-PUT /
-n:
-Connection: keep-alive
-
-PUT /
-Connection:keep-alive
-
-PUT /n:
-Connection: keep-alive
-
-PUT /
-Connection:keep-alive
-
-PUT /
-Connection:keep-alive 
-
-PUT /c
-Connection:keep-alive
-
-PUT /
-Connection: keep-alive
-
-PUT /p
-Connection:keep-alive
-
-PUT /
-Connection:keep-alive
-
-PUT /
-Connection: keep-alive,
-
-PUT /N:
-Connection:keep-alive
-
-PUT /
-Connection: keep-alive
-
-PUT /
-Connection:keep-alive
-
-PUT /
-Connection: keep-alive
-
-PUT /c
-Connection:keep-alive, 
-
-PUT /
-D:
-Connection:keep-alive 
-
-PUT /c
-Connection:keep-alive
-
-PUT /
-Connection: keep-alive
-
-PUT /p
-Connection:keep-alive
-
-PUT /
-Connection:keep-alive
-
-PUT /?
-Connection:keep-alive,g
-
-PUT /
-Connection: keep-alive
-
-PUT /
-Connection: keep-alivE
-
-PUT /
-Connection: keep-alive
-
-PUT /
-D
